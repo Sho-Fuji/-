@@ -13,7 +13,7 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.JButton;
 
-public class §ìÀK1 extends JFrame {
+public class §ìÀK_2 extends JFrame {
 
 	private JPanel contentPane;
 	private ImageIcon Img = new ImageIcon("C:\\Java\\kadai\\”wŒi.png");
@@ -24,7 +24,7 @@ public class §ìÀK1 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					§ìÀK1 frame = new §ìÀK1();
+					§ìÀK_2 frame = new §ìÀK_2();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class §ìÀK1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public §ìÀK1() {
+	public §ìÀK_2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
