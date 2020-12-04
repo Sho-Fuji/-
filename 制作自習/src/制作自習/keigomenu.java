@@ -27,7 +27,7 @@ import java.awt.Dialog.ModalityType;
 public class keigomenu extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-
+	public boolean okFlag=false;
 	/**
 	 * Launch the application.
 	 */
@@ -74,6 +74,7 @@ public class keigomenu extends JDialog {
 		JButton CancelButton = new JButton("戻る");
 		CancelButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				okFlag=false;
 				setVisible(false);
 			}
 		});
