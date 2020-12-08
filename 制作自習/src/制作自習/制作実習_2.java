@@ -12,6 +12,8 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class êßçÏé¿èK_2 extends JFrame {
 
@@ -59,6 +61,10 @@ public class êßçÏé¿èK_2 extends JFrame {
 		contentPane.add(DispLabel1);
 		
 		JButton btnNewButton = new JButton("START");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton.setBounds(142, 150, 151, 41);
 		btnNewButton.setFont(new Font("Gill Sans Ultra Bold Condensed", Font.PLAIN, 25));
 		contentPane.add(btnNewButton);
