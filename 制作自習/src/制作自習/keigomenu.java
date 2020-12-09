@@ -74,7 +74,7 @@ public class keigomenu extends JDialog {
 		JButton CancelButton = new JButton("戻る");
 		CancelButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				okFlag=false;
+				okFlag=true;
 				setVisible(false);
 			}
 		});

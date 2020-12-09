@@ -70,7 +70,9 @@ public class keigoapp extends JFrame {
 		JButton StartButton = new JButton("START");
 		StartButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
 				menu.setVisible(true);
+				setVisible(menu.okFlag);
 			}
 		});
 		StartButton.setBounds(142, 150, 151, 41);
