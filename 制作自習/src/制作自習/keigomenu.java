@@ -27,6 +27,7 @@ import java.awt.Dialog.ModalityType;
 public class keigomenu extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
+	private ImageIcon Img = new ImageIcon("data\\背景.png");
 	public boolean okFlag=false;
 	/**
 	 * Launch the application.
@@ -89,6 +90,10 @@ public class keigomenu extends JDialog {
 		});
 		EndButton.setBounds(230, 210, 68, 35);
 		contentPanel.add(EndButton);
+		
+		JLabel PicLabel = new JLabel(Img);
+		PicLabel.setBounds(0, 0, 436, 277);
+		contentPanel.add(PicLabel);
 		
 		
 		
