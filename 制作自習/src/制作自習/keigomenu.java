@@ -13,6 +13,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Dialog.ModalityType;
 
 
 /**
@@ -26,7 +27,8 @@ import java.awt.event.ActionEvent;
 public class keigomenu extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-
+	private ImageIcon Img = new ImageIcon("data\\背景.png");
+	public boolean okFlag=false;
 	/**
 	 * Launch the application.
 	 */
@@ -44,6 +46,7 @@ public class keigomenu extends JDialog {
 	 * Create the dialog.
 	 */
 	public keigomenu() {
+		setModalityType(ModalityType.APPLICATION_MODAL);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -72,6 +75,7 @@ public class keigomenu extends JDialog {
 		JButton CancelButton = new JButton("戻る");
 		CancelButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				okFlag=false;
 				setVisible(false);
 			}
 		});
@@ -86,6 +90,10 @@ public class keigomenu extends JDialog {
 		});
 		EndButton.setBounds(230, 210, 68, 35);
 		contentPanel.add(EndButton);
+		
+		JLabel PicLabel = new JLabel(Img);
+		PicLabel.setBounds(0, 0, 436, 277);
+		contentPanel.add(PicLabel);
 		
 		
 		
