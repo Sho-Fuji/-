@@ -52,7 +52,7 @@ public class keigokiso extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		lblNewLabel = new JLabel("Q1. 「言う」の丁寧語は？");
+		lblNewLabel = new JLabel("Q1. 「言う」の丁寧語は？？");
 		lblNewLabel.setBounds(34, 10, 227, 50);
 		contentPanel.add(lblNewLabel);
 		
