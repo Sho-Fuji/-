@@ -14,11 +14,12 @@ import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class keigokiso extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JButton backButton;
+	private JButton AnswerButton;
 	private JButton NextButton;
 	private JLabel kaisetuLabel;
 	private JPanel panel;
@@ -87,19 +88,18 @@ public class keigokiso extends JDialog {
 		kaisetuLabel = new JLabel(" ");
 		kaisetuLabel.setBounds(34, 148, 334, 74);
 		contentPanel.add(kaisetuLabel);
+		
+		JButton BackButton = new JButton("戻る");
+		BackButton.setActionCommand("Cancel");
+		BackButton.setBounds(362, 10, 64, 21);
+		contentPanel.add(BackButton);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				backButton = new JButton("戻る");
-				backButton.setActionCommand("OK");
-				buttonPane.add(backButton);
-				getRootPane().setDefaultButton(backButton);
-			}
-			{
-				NextButton = new JButton("回答");
-				NextButton.addActionListener(new ActionListener() {
+				AnswerButton = new JButton("解答");
+				AnswerButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						if(ARadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「言います」<br>「おっしゃる」は尊敬語であり、「申す、申し上げる」は謙譲語である。</html>");
@@ -112,7 +112,20 @@ public class keigokiso extends JDialog {
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「言います」<br>「おっしゃる」は尊敬語であり、「申す、申し上げる」は謙譲語である。</html>");
-						}
+						}			
+						NextButton.setEnabled(true);
+					}
+				});
+				AnswerButton.setActionCommand("OK");
+				buttonPane.add(AnswerButton);
+				getRootPane().setDefaultButton(AnswerButton);
+			}
+			{
+				NextButton = new JButton("次へ");
+				NextButton.setEnabled(false);
+				NextButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						
 					}
 				});
 				NextButton.setActionCommand("Cancel");
