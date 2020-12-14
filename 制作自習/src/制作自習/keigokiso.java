@@ -14,11 +14,14 @@ import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Color;
 
 public class keigokiso extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-	private JButton backButton;
+	private JButton AnswerButton;
 	private JButton NextButton;
 	private JLabel kaisetuLabel;
 	private JPanel panel;
@@ -28,6 +31,7 @@ public class keigokiso extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private JLabel MessageLabel;
 
 	/**
 	 * Launch the application.
@@ -53,7 +57,9 @@ public class keigokiso extends JDialog {
 		contentPanel.setLayout(null);
 		
 		lblNewLabel = new JLabel("Q1. 「言う」の丁寧語は？？");
-		lblNewLabel.setBounds(34, 10, 227, 50);
+		lblNewLabel.setForeground(Color.RED);
+		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
+		lblNewLabel.setBounds(34, 10, 319, 50);
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
@@ -62,16 +68,20 @@ public class keigokiso extends JDialog {
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 		
 		ARadioButton = new JRadioButton("おしゃっる");
+		ARadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		ARadioButton.setSelected(true);
 		panel.add(ARadioButton);
 		
 		BRadioButton = new JRadioButton("申す");
+		BRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		panel.add(BRadioButton);
 		
 		CRadioButton = new JRadioButton("言います");
+		CRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		panel.add(CRadioButton);
 		
 		DRadioButton = new JRadioButton("申し上げる");
+		DRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		panel.add(DRadioButton);
 		
 		bg = new ButtonGroup();
@@ -85,34 +95,62 @@ public class keigokiso extends JDialog {
 		contentPanel.add(lblNewLabel_1);
 		
 		kaisetuLabel = new JLabel(" ");
-		kaisetuLabel.setBounds(34, 148, 334, 74);
+		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
+		kaisetuLabel.setBounds(34, 180, 334, 80);
 		contentPanel.add(kaisetuLabel);
+		
+		JButton BackButton = new JButton("戻る");
+		BackButton.setActionCommand("Cancel");
+		BackButton.setBounds(363, 10, 63, 21);
+		contentPanel.add(BackButton);
+		
+		MessageLabel = new JLabel("");
+		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 40));
+		MessageLabel.setBounds(34, 137, 334, 57);
+		contentPanel.add(MessageLabel);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				backButton = new JButton("戻る");
-				backButton.setActionCommand("OK");
-				buttonPane.add(backButton);
-				getRootPane().setDefaultButton(backButton);
-			}
-			{
-				NextButton = new JButton("回答");
-				NextButton.addActionListener(new ActionListener() {
+				AnswerButton = new JButton("解答");
+				AnswerButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						if(ARadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「言います」<br>「おっしゃる」は尊敬語であり、「申す、申し上げる」は謙譲語である。</html>");
+							MessageLabel.setText("× 不正解");
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「言います」<br>「おっしゃる」は尊敬語であり、「申す、申し上げる」は謙譲語である。</html>");
+							MessageLabel.setText("× 不正解");
 						}
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>「おっしゃる」は尊敬語であり、「申す、申し上げる」は謙譲語である。</html>");
+							MessageLabel.setText("〇 正解");
+							MessageLabel.setForeground(Color.RED);
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「言います」<br>「おっしゃる」は尊敬語であり、「申す、申し上げる」は謙譲語である。</html>");
-						}
+							MessageLabel.setText("× 不正解");
+						}			
+						ARadioButton.setEnabled(false);
+						BRadioButton.setEnabled(false);
+						CRadioButton.setEnabled(false);
+						DRadioButton.setEnabled(false);
+						AnswerButton.setEnabled(false);
+						NextButton.setEnabled(true);
+					}
+				});
+				AnswerButton.setActionCommand("OK");
+				buttonPane.add(AnswerButton);
+				getRootPane().setDefaultButton(AnswerButton);
+			}
+			{
+				NextButton = new JButton("次へ");
+				NextButton.setEnabled(false);
+				NextButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						
 					}
 				});
 				NextButton.setActionCommand("Cancel");
