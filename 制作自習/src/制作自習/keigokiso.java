@@ -90,10 +90,6 @@ public class keigokiso extends JDialog {
 		bg.add(CRadioButton);
 		bg.add(DRadioButton);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(324, 144, -225, 66);
-		contentPanel.add(lblNewLabel_1);
-		
 		kaisetuLabel = new JLabel(" ");
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
 		kaisetuLabel.setBounds(34, 180, 334, 80);
