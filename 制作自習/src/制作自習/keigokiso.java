@@ -56,7 +56,8 @@ public class keigokiso extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		lblNewLabel = new JLabel("Q1. 「言う」の丁寧語は？？");
+		lblNewLabel = new JLabel("「言う」の丁寧語は？？");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
 		lblNewLabel.setBounds(34, 10, 319, 50);

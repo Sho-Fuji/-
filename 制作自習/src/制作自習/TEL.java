@@ -19,9 +19,6 @@ import java.awt.Font;
 import java.awt.Color;
 
 public class TEL extends JDialog {
-	public TEL() {
-	}
-
 	private final JPanel contentPanel = new JPanel();
 	private JButton AnswerButton;
 	private JButton NextButton;
@@ -40,7 +37,7 @@ public class TEL extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			keigokiso dialog = new keigokiso();
+			TEL dialog = new TEL();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -52,23 +49,23 @@ public class TEL extends JDialog {
 	 * Create the dialog.
 	 * @return 
 	 */
-	public void TEL1() {
+	public TEL() {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		lblNewLabel = new JLabel("Q1. 電話の受け方で朝の第一声で正しいのを選べ ");
+		lblNewLabel = new JLabel("電話の受け方で朝の第一声で正しいのを選べ ");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
-		lblNewLabel.setBounds(34, 10, 319, 50);
+		lblNewLabel.setBounds(21, -5, 405, 50);
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(34, 70, 334, 57);
+		panel.setBounds(31, 33, 284, 127);
 		contentPanel.add(panel);
-		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+		panel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
 		ARadioButton = new JRadioButton("「もしもし…」と返事で出る。");
 		ARadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
@@ -95,17 +92,12 @@ public class TEL extends JDialog {
 		
 		kaisetuLabel = new JLabel(" ");
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
-		kaisetuLabel.setBounds(34, 180, 334, 80);
+		kaisetuLabel.setBounds(21, 211, 386, 50);
 		contentPanel.add(kaisetuLabel);
-		
-		JButton BackButton = new JButton("戻る");
-		BackButton.setActionCommand("Cancel");
-		BackButton.setBounds(363, 10, 63, 21);
-		contentPanel.add(BackButton);
 		
 		MessageLabel = new JLabel("");
 		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 40));
-		MessageLabel.setBounds(34, 137, 334, 57);
+		MessageLabel.setBounds(21, 161, 334, 61);
 		contentPanel.add(MessageLabel);
 		{
 			JPanel buttonPane = new JPanel();
@@ -126,11 +118,11 @@ public class TEL extends JDialog {
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「はい。おはようございます」と出る。</html>");
 							MessageLabel.setText("× 不正解");
-							MessageLabel.setForeground(Color.RED);
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。正解は「はい。おはようございます」と出る。<br>が適切です。</html>");
 							MessageLabel.setText("〇 正解");
+							MessageLabel.setForeground(Color.RED);
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -140,6 +132,10 @@ public class TEL extends JDialog {
 						NextButton.setEnabled(true);
 					}
 				});
+				
+				JButton BackButton = new JButton("戻る");
+				buttonPane.add(BackButton);
+				BackButton.setActionCommand("Cancel");
 				AnswerButton.setActionCommand("OK");
 				buttonPane.add(AnswerButton);
 				getRootPane().setDefaultButton(AnswerButton);
