@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
 
-public class TEL extends JDialog {
+public class TEL_7 extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JButton AnswerButton;
 	private JButton NextButton;
@@ -37,7 +37,7 @@ public class TEL extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			TEL dialog = new TEL();
+			TEL_7 dialog = new TEL_7();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -49,38 +49,38 @@ public class TEL extends JDialog {
 	 * Create the dialog.
 	 * @return 
 	 */
-	public TEL() {
-		setBounds(100, 100, 450, 300);
+	public TEL_7() {
+		setBounds(100, 100, 500, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		lblNewLabel = new JLabel("電話の受け方で朝の第一声で正しいのを選べ ");
+		lblNewLabel = new JLabel("<html>電話の取り次ぎで名指し人の依頼を受ける際<br>誤っているものを選べ<html> ");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
 		lblNewLabel.setBounds(21, -5, 405, 50);
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(31, 33, 284, 127);
+		panel.setBounds(10, 41, 472, 143);
 		contentPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
-		ARadioButton = new JRadioButton("「もしもし…」と返事で出る。");
+		ARadioButton = new JRadioButton("「はい。○○様でございますね。少々お待ちくださいませ」");
 		ARadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		ARadioButton.setSelected(true);
 		panel.add(ARadioButton);
 		
-		BRadioButton = new JRadioButton("「○○会社でございます」と出る。");
+		BRadioButton = new JRadioButton("<html>「はい。○○でございますね。<br>それでは○○課にお取次ぎいたしまので、少々お待ちくださいませ」<html>");
 		BRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		panel.add(BRadioButton);
 		
-		CRadioButton = new JRadioButton("「はい」と出る。");
+		CRadioButton = new JRadioButton("「はい。○○でございますね。少々お待ちくださいませ」");
 		CRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		panel.add(CRadioButton);
 		
-		DRadioButton = new JRadioButton("「はい。おはようございます」と出る。");
+		DRadioButton = new JRadioButton("「申し訳ございません。○○は只今、席をはずしております」");
 		DRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		panel.add(DRadioButton);
 		
@@ -108,20 +108,20 @@ public class TEL extends JDialog {
 				AnswerButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						if(ARadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>不正解です。正解は「はい。おはようございます」と出る。が正しいです。</html>");
-							MessageLabel.setText("× 不正解");
+							kaisetuLabel.setText("<html>正解です。「はい。○○様でございますね。少々お待ちくださいませ」は間違いです。　</html>");
+							MessageLabel.setText("〇 正解");
 						}
 						else if(BRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>不正解です。正解は「はい。おはようございます」と出る。が正しいです。</html>");
+							kaisetuLabel.setText("<html>不正解です。正解は「はい。○○様でございますね。少々お待ちくださいませ」が正解です。</html>");
 							MessageLabel.setText("× 不正解");
 						}
 						else if(CRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>不正解です。正解は「はい。おはようございます」と出る。が正しいです。</html>");
+							kaisetuLabel.setText("<html>正解です。正解は「はい。○○様でございますね。少々お待ちくださいませ」が正解です。</html>");
 							MessageLabel.setText("× 不正解");
 						}
 						else if(DRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>正解です。正解は「はい。おはようございます」と出る。が正しいです。</html>");
-							MessageLabel.setText("〇 正解");
+							kaisetuLabel.setText("<html>不正解です。正解は「はい。○○様でございますね。少々お待ちくださいませ」が正解です。</html>");
+							MessageLabel.setText("× 不正解");
 							MessageLabel.setForeground(Color.RED);
 						}			
 						ARadioButton.setEnabled(false);
