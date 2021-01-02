@@ -72,7 +72,7 @@ public class TEL_2 extends JDialog {
 		ARadioButton.setSelected(true);
 		panel.add(ARadioButton);
 		
-		BRadioButton = new JRadioButton("頭の中で記憶する。");
+		BRadioButton = new JRadioButton("頭の中で記憶する");
 		BRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		panel.add(BRadioButton);
 		
