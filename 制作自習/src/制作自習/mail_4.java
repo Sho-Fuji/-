@@ -56,19 +56,19 @@ public class mail_4 extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		lblNewLabel = new JLabel("ビジネスメールで署名を入れる際、適切ではないものは ");
+		lblNewLabel = new JLabel("ビジネスメールで署名を入れる際、適切ではないものは？ ");
 		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
-		lblNewLabel.setBounds(21, -5, 405, 50);
+		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 17));
+		lblNewLabel.setBounds(0, -5, 448, 50);
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(31, 33, 284, 127);
+		panel.setBounds(0, 33, 436, 127);
 		contentPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
 		ARadioButton = new JRadioButton("メールの最後に会社名・所属・名前・電話番号などが入った署名を入れる");
-		ARadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
+		ARadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 12));
 		ARadioButton.setSelected(true);
 		panel.add(ARadioButton);
 		
@@ -91,6 +91,7 @@ public class mail_4 extends JDialog {
 		bg.add(DRadioButton);
 		
 		kaisetuLabel = new JLabel(" ");
+		kaisetuLabel.setFont(new Font("MS UI Gothic", Font.PLAIN, 12));
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
 		kaisetuLabel.setBounds(21, 211, 386, 50);
 		contentPanel.add(kaisetuLabel);

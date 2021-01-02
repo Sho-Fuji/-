@@ -114,6 +114,7 @@ public class TEL_3 extends JDialog {
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。あいさつの後、すぐに電話を切る。は間違いです。</html>");
 							MessageLabel.setText("〇 正解");
+							MessageLabel.setForeground(Color.RED);
 						}
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「あいさつの後、すぐに電話を切る。」が正解です。</html>");
@@ -122,7 +123,7 @@ public class TEL_3 extends JDialog {
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「あいさつの後、すぐに電話を切る。」が正解です。</html>");
 							MessageLabel.setText("× 不正解");
-							MessageLabel.setForeground(Color.RED);
+
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);

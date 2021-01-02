@@ -118,11 +118,11 @@ public class TEL_2 extends JDialog {
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。「メモを取った後、復唱し確認する。」が最も適切です。</html>");
 							MessageLabel.setText("〇 正解");
+							MessageLabel.setForeground(Color.RED);
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「メモを取った後、復唱し確認する。」が最も適切です。</html>");
 							MessageLabel.setText("× 不正解");
-							MessageLabel.setForeground(Color.RED);
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);

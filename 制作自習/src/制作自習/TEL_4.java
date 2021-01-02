@@ -63,7 +63,7 @@ public class TEL_4 extends JDialog {
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(31, 33, 284, 127);
+		panel.setBounds(31, 33, 297, 127);
 		contentPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
@@ -91,6 +91,7 @@ public class TEL_4 extends JDialog {
 		bg.add(DRadioButton);
 		
 		kaisetuLabel = new JLabel(" ");
+		kaisetuLabel.setFont(new Font("MS UI Gothic", Font.PLAIN, 11));
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
 		kaisetuLabel.setBounds(21, 211, 386, 50);
 		contentPanel.add(kaisetuLabel);
@@ -114,6 +115,7 @@ public class TEL_4 extends JDialog {
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。電話を掛ける際は、始業直後、終業直前、昼食時以外に掛けるように気をつけましょう。</html>");
 							MessageLabel.setText("〇 正解");
+							MessageLabel.setForeground(Color.RED);
 						}
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「始業直後、終業直前、昼食時以外に掛ける。」が正しいです。</html>");
@@ -122,7 +124,6 @@ public class TEL_4 extends JDialog {
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「始業直後、終業直前、昼食時以外に掛ける。」が正しいです。</html>");
 							MessageLabel.setText("× 不正解");
-							MessageLabel.setForeground(Color.RED);
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);

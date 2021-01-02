@@ -50,11 +50,16 @@ public class TEL_7 extends JDialog {
 	 * @return 
 	 */
 	public TEL_7() {
-		setBounds(100, 100, 500, 300);
+		setBounds(100, 100, 541, 333);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
+		
+		MessageLabel = new JLabel("");
+		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 36));
+		MessageLabel.setBounds(21, 190, 334, 65);
+		contentPanel.add(MessageLabel);
 		
 		lblNewLabel = new JLabel("<html>電話の取り次ぎで名指し人の依頼を受ける際<br>誤っているものを選べ<html> ");
 		lblNewLabel.setForeground(Color.RED);
@@ -91,14 +96,10 @@ public class TEL_7 extends JDialog {
 		bg.add(DRadioButton);
 		
 		kaisetuLabel = new JLabel(" ");
+		kaisetuLabel.setFont(new Font("MS UI Gothic", Font.PLAIN, 11));
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
-		kaisetuLabel.setBounds(21, 211, 386, 50);
+		kaisetuLabel.setBounds(10, 236, 472, 39);
 		contentPanel.add(kaisetuLabel);
-		
-		MessageLabel = new JLabel("");
-		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 40));
-		MessageLabel.setBounds(21, 161, 334, 61);
-		contentPanel.add(MessageLabel);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -110,6 +111,7 @@ public class TEL_7 extends JDialog {
 						if(ARadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。「はい。○○様でございますね。少々お待ちくださいませ」は間違いです。　</html>");
 							MessageLabel.setText("〇 正解");
+							MessageLabel.setForeground(Color.RED);
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「はい。○○様でございますね。少々お待ちくださいませ」が正解です。</html>");
@@ -122,7 +124,6 @@ public class TEL_7 extends JDialog {
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「はい。○○様でございますね。少々お待ちくださいませ」が正解です。</html>");
 							MessageLabel.setText("× 不正解");
-							MessageLabel.setForeground(Color.RED);
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);

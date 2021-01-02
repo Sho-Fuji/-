@@ -92,12 +92,12 @@ public class TEL_5 extends JDialog {
 		
 		kaisetuLabel = new JLabel(" ");
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
-		kaisetuLabel.setBounds(21, 211, 386, 50);
+		kaisetuLabel.setBounds(31, 222, 533, 50);
 		contentPanel.add(kaisetuLabel);
 		
 		MessageLabel = new JLabel("");
 		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 40));
-		MessageLabel.setBounds(21, 161, 334, 61);
+		MessageLabel.setBounds(21, 173, 334, 61);
 		contentPanel.add(MessageLabel);
 		{
 			JPanel buttonPane = new JPanel();
@@ -110,6 +110,7 @@ public class TEL_5 extends JDialog {
 						if(ARadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。「○○様をお願いできますでしょうか」という依頼の仕方は間違いです。</html>");
 							MessageLabel.setText("〇 正解");
+							MessageLabel.setForeground(Color.RED);
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「○○様をお願いできますでしょうか」が正解です。</html>");
@@ -122,7 +123,6 @@ public class TEL_5 extends JDialog {
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「○○様をお願いできますでしょうか」が正解です。</html>");
 							MessageLabel.setText("× 不正解");
-							MessageLabel.setForeground(Color.RED);
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);

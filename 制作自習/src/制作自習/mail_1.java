@@ -56,14 +56,19 @@ public class mail_1 extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
+		MessageLabel = new JLabel("");
+		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 40));
+		MessageLabel.setBounds(21, 149, 404, 61);
+		contentPanel.add(MessageLabel);
+		
 		lblNewLabel = new JLabel("メールを使っても良いのはどれか");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
-		lblNewLabel.setBounds(21, -5, 306, 50);
+		lblNewLabel.setBounds(64, -5, 306, 50);
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(31, 33, 284, 127);
+		panel.setBounds(31, 29, 351, 127);
 		contentPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.LEADING, 5, 5));
 		
@@ -91,14 +96,16 @@ public class mail_1 extends JDialog {
 		bg.add(DRadioButton);
 		
 		kaisetuLabel = new JLabel(" ");
+		kaisetuLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		kaisetuLabel.setFont(new Font("MS UI Gothic", Font.PLAIN, 11));
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
-		kaisetuLabel.setBounds(21, 211, 386, 50);
+		kaisetuLabel.setBounds(0, 192, 435, 74);
 		contentPanel.add(kaisetuLabel);
 		
-		MessageLabel = new JLabel("");
-		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 40));
-		MessageLabel.setBounds(21, 161, 334, 61);
-		contentPanel.add(MessageLabel);
+		JButton BackButton = new JButton("戻る");
+		BackButton.setBounds(373, 13, 60, 21);
+		contentPanel.add(BackButton);
+		BackButton.setActionCommand("Cancel");
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -108,21 +115,21 @@ public class mail_1 extends JDialog {
 				AnswerButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						if(ARadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>不正解です。正解は　社内で大人数に同じ情報を送る　が正しいです。<br>メールでの複雑な内容は相手に伝わりにくく、電話など工夫をする必要があります。</html>");
+							kaisetuLabel.setText("<html>不正解です。正解は社内で大人数に同じ情報を送るが正しいです。<br>メールでの複雑な内容は相手に伝わりにくく、電話など工夫をする必要がある。</html>");
 							MessageLabel.setText("× 不正解");
 						}
 						else if(BRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>正解です。正解は　社内で大人数に同じ情報を送る　が正しいです。<br>社内で大人数に情報共有をする場合はメールでの一斉送信をしても良いです。</html>");
+							kaisetuLabel.setText("<html>正解です。社内で大人数に同じ情報を送るが正しいです。<br>社内で大人数に情報共有をする場合はメールでの一斉送信をしても良いです。</html>");
 							MessageLabel.setText("〇 正解");
+							MessageLabel.setForeground(Color.RED);
 						}
 						else if(CRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>不正解です。正解は　社内で大人数に同じ情報を送る　が正しいです。<br>メールをあまり使用しない人はメールが届いていることに気づかない可能性があるのでメールより電話の方が良いです。</html>");
+							kaisetuLabel.setText("<html>不正解です。正解は社内で大人数に同じ情報を送るが正しいです。<br>メールをあまり使用しない人はメールが届いていることに気づかない可能性があるのでメールより電話の方が良い。</html>");
 							MessageLabel.setText("× 不正解");
 						}
 						else if(DRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>不正解です。正解は　社内で大人数に同じ情報を送る　が正しいです。<br>苦情や改善要求をしてくる相手にメールでの対応は絶対にしてはいけないです。</html>");
+							kaisetuLabel.setText("<html>不正解です。正解は社内で大人数に同じ情報を送るが正しいです。<br>苦情や改善要求をしてくる相手にメールでの対応は絶対にしてはいけない。</html>");
 							MessageLabel.setText("× 不正解");
-							MessageLabel.setForeground(Color.RED);
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -132,10 +139,6 @@ public class mail_1 extends JDialog {
 						NextButton.setEnabled(true);
 					}
 				});
-				
-				JButton BackButton = new JButton("戻る");
-				buttonPane.add(BackButton);
-				BackButton.setActionCommand("Cancel");
 				AnswerButton.setActionCommand("OK");
 				buttonPane.add(AnswerButton);
 				getRootPane().setDefaultButton(AnswerButton);

@@ -56,14 +56,14 @@ public class mail_2 extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		lblNewLabel = new JLabel("ビジネスメールの本文でやってはいけないことはどれか");
+		lblNewLabel = new JLabel("ビジネスメールの本文でやってはいけないことはどれか？");
 		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
-		lblNewLabel.setBounds(21, -5, 405, 50);
+		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 17));
+		lblNewLabel.setBounds(0, -5, 446, 50);
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(31, 33, 284, 127);
+		panel.setBounds(31, 33, 415, 127);
 		contentPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		

@@ -56,14 +56,14 @@ public class mail_3 extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		lblNewLabel = new JLabel("ビジネスメールで添付ファイルなどを送る際、誤っているものを選べ ");
+		lblNewLabel = new JLabel("ビジネスメールで添付ファイルなどを送る際、誤っているものは？ ");
 		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
-		lblNewLabel.setBounds(21, -5, 405, 50);
+		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 15));
+		lblNewLabel.setBounds(0, -5, 455, 50);
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(31, 33, 284, 127);
+		panel.setBounds(0, 33, 436, 127);
 		contentPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
@@ -91,8 +91,9 @@ public class mail_3 extends JDialog {
 		bg.add(DRadioButton);
 		
 		kaisetuLabel = new JLabel(" ");
+		kaisetuLabel.setFont(new Font("MS UI Gothic", Font.PLAIN, 11));
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
-		kaisetuLabel.setBounds(21, 211, 386, 50);
+		kaisetuLabel.setBounds(21, 200, 386, 61);
 		contentPanel.add(kaisetuLabel);
 		
 		MessageLabel = new JLabel("");
@@ -110,6 +111,7 @@ public class mail_3 extends JDialog {
 						if(ARadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。添付ファイルだけを送るのは相手に失礼です。一言付け加えるほうが良いです。</html>");
 							MessageLabel.setText("〇 正解");
+							MessageLabel.setForeground(Color.RED);
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。添付ファイルにパスワードを設定し、別でパスワードを連絡することは良いですが、問題は誤っているものなのでここでは不正解です。</html>");
@@ -122,7 +124,6 @@ public class mail_3 extends JDialog {
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。ファイル転送サービスを利用して送ることは良いですが、問題は誤っているものなのでここでは不正解です。</html>");
 							MessageLabel.setText("× 不正解");
-							MessageLabel.setForeground(Color.RED);
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
