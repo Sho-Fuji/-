@@ -95,7 +95,7 @@ public class TEL_2 extends JDialog {
 		kaisetuLabel.setBounds(21, 211, 386, 50);
 		contentPanel.add(kaisetuLabel);
 		
-		MessageLabel = new JLabel("");
+		MessageLabel = new JLabel(" ");
 		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 40));
 		MessageLabel.setBounds(21, 161, 334, 61);
 		contentPanel.add(MessageLabel);
