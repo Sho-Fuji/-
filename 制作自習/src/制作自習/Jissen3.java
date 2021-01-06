@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
 
-public class jissen1 extends JDialog {
+public class Jissen3 extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JButton AnswerButton;
 	private JButton NextButton;
@@ -37,7 +37,7 @@ public class jissen1 extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			jissen1 dialog = new jissen1();
+			Jissen3 dialog = new Jissen3();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -49,7 +49,7 @@ public class jissen1 extends JDialog {
 	 * Create the dialog.
 	 * @return 
 	 */
-	public jissen1() {
+	public Jissen3() {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -61,7 +61,7 @@ public class jissen1 extends JDialog {
 		MessageLabel.setBounds(15, 161, 405, 50);
 		contentPanel.add(MessageLabel);
 		
-		lblNewLabel = new JLabel("<html>「次の文章【	】に不適切なものはどれか？<br> 普通の言葉：誰ですか→望ましい言葉：失礼でございますが【	）でいらっしゃいますか <html> ");
+		lblNewLabel = new JLabel("不適切なのはどれか");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 12));
@@ -73,18 +73,20 @@ public class jissen1 extends JDialog {
 		contentPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
-		ARadioButton = new JRadioButton("どちら様");
+		ARadioButton = new JRadioButton("お会計は合計で5000円です。");
 		ARadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		ARadioButton.setSelected(true);
 		panel.add(ARadioButton);
 		
-		BRadioButton = new JRadioButton("どなた様");
+		BRadioButton = new JRadioButton("お会計は合計で5000円でございます。");
 		BRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		panel.add(BRadioButton);
 		
-		CRadioButton = new JRadioButton("どなた");
+		CRadioButton = new JRadioButton("お会計は合計で5000円になります。");
 		CRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		panel.add(CRadioButton);
+		
+		
 		
 		
 		
@@ -92,7 +94,8 @@ public class jissen1 extends JDialog {
 		bg.add(ARadioButton);
 		bg.add(BRadioButton);
 		bg.add(CRadioButton);
-		bg.add(DRadioButton);
+		
+		
 		
 		kaisetuLabel = new JLabel(" ");
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
@@ -107,19 +110,20 @@ public class jissen1 extends JDialog {
 				AnswerButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						if(CRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>正解です。</html>");
+							kaisetuLabel.setText("<html>正解です。<br>「～になります」は変化を表す言葉なので適切ではない。</html>");
 							MessageLabel.setText("〇 正解 ");
 							MessageLabel.setForeground(Color.RED);
 						}
 						else if(BRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>不正解です。正解は「どなた」である</html>");
+							kaisetuLabel.setText("<html>不正解です。「～になります」は変化を表す言葉なので適切ではないため、正解は「どのような」である</html>");
 							MessageLabel.setText("× 不正解");
 						}
 						else if(ARadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>不正解です。正解は「どなた」である</html>");
+							kaisetuLabel.setText("<html>不正解です。「～になります」は変化を表す言葉なので適切ではないため、正解は「どのような」である</html>");
 							MessageLabel.setText("× 不正解");
 						}
-									
+						
+						
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
 						CRadioButton.setEnabled(false);
