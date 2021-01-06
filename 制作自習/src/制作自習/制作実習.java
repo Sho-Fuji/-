@@ -1,4 +1,4 @@
-package §ì©K;
+package åˆ¶ä½œè‡ªç¿’;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -16,10 +16,10 @@ import java.awt.Color;
 import java.awt.Dialog.ModalExclusionType;
 import java.awt.Panel;
 
-public class §ìÀK extends JFrame {
+public class åˆ¶ä½œå®Ÿç¿’ extends JFrame {
 
 	private JPanel contentPane;
-	private ImageIcon Img = new ImageIcon("C:\\Java\\kadai\\”wŒi.png");
+	private ImageIcon Img = new ImageIcon("C:\\Java\\kadai\\èƒŒæ™¯.png");
 	private JLabel DispLabel;
 	/**
 	 * Launch the application.
@@ -28,7 +28,7 @@ public class §ìÀK extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					§ìÀK frame = new §ìÀK();
+					åˆ¶ä½œå®Ÿç¿’ frame = new åˆ¶ä½œå®Ÿç¿’();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class §ìÀK extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public §ìÀK() {
+	public åˆ¶ä½œå®Ÿç¿’() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -50,33 +50,33 @@ public class §ìÀK extends JFrame {
 		
 
 		JButton btnNewButton = new JButton("\u6587\u6CD5\u7DE8");
-		btnNewButton.setFont(new Font("BIZ UDPƒSƒVƒbƒN", Font.BOLD, 20));
+		btnNewButton.setFont(new Font("BIZ UDPã‚´ã‚·ãƒƒã‚¯", Font.BOLD, 20));
 		btnNewButton.setBounds(100, 94, 236, 27);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("\u5B9F\u8DF5\u7DE8");
-		btnNewButton_1.setFont(new Font("BIZ UDPƒSƒVƒbƒN", Font.BOLD, 20));
+		btnNewButton_1.setFont(new Font("BIZ UDPã‚´ã‚·ãƒƒã‚¯", Font.BOLD, 20));
 		btnNewButton_1.setBounds(100, 142, 236, 27);
 		contentPane.add(btnNewButton_1);
 		
 		JButton btnNewButton_1_1 = new JButton("\u5FA9\u7FD2\u7DE8");
-		btnNewButton_1_1.setFont(new Font("BIZ UDPƒSƒVƒbƒN", Font.BOLD, 20));
+		btnNewButton_1_1.setFont(new Font("BIZ UDPã‚´ã‚·ãƒƒã‚¯", Font.BOLD, 20));
 		btnNewButton_1_1.setBounds(100, 189, 236, 27);
 		contentPane.add(btnNewButton_1_1);
 		
 		JButton btnNewButton_1_1_1 = new JButton("\u623B\u308B");
-		btnNewButton_1_1_1.setFont(new Font("BIZ UDPƒSƒVƒbƒN", Font.BOLD, 20));
+		btnNewButton_1_1_1.setFont(new Font("BIZ UDPã‚´ã‚·ãƒƒã‚¯", Font.BOLD, 20));
 		btnNewButton_1_1_1.setBounds(100, 226, 93, 27);
 		contentPane.add(btnNewButton_1_1_1);
 		
 		JButton btnNewButton_1_1_1_1 = new JButton("\u7D42\u4E86");
-		btnNewButton_1_1_1_1.setFont(new Font("BIZ UDPƒSƒVƒbƒN", Font.BOLD, 20));
+		btnNewButton_1_1_1_1.setFont(new Font("BIZ UDPã‚´ã‚·ãƒƒã‚¯", Font.BOLD, 20));
 		btnNewButton_1_1_1_1.setBounds(242, 226, 93, 27);
 		contentPane.add(btnNewButton_1_1_1_1);
 		
 		JLabel lblNewLabel = new JLabel("\u30B2\u30FC\u30E0\u30E2\u30FC\u30C9");
 		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setFont(new Font("HGPs‘‘Ì", Font.PLAIN, 50));
+		lblNewLabel.setFont(new Font("HGPè¡Œæ›¸ä½“", Font.PLAIN, 50));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(49, 10, 338, 70);
 		contentPane.add(lblNewLabel);

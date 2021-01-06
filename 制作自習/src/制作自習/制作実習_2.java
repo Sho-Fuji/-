@@ -1,4 +1,4 @@
-package §ì©K;
+package åˆ¶ä½œè‡ªç¿’;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -15,10 +15,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class §ìÀK_2 extends JFrame {
+public class åˆ¶ä½œå®Ÿç¿’_2 extends JFrame {
 
 	private JPanel contentPane;
-	private ImageIcon Img = new ImageIcon("C:\\Java\\kadai\\”wŒi.png");
+	private ImageIcon Img = new ImageIcon("C:\\Java\\kadai\\èƒŒæ™¯.png");
 	/**
 	 * Launch the application.
 	 */
@@ -26,7 +26,7 @@ public class §ìÀK_2 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					§ìÀK_2 frame = new §ìÀK_2();
+					åˆ¶ä½œå®Ÿç¿’_2 frame = new åˆ¶ä½œå®Ÿç¿’_2();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +38,7 @@ public class §ìÀK_2 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public §ìÀK_2() {
+	public åˆ¶ä½œå®Ÿç¿’_2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -50,14 +50,14 @@ public class §ìÀK_2 extends JFrame {
 		JLabel DIspLabel = new JLabel("\u8A9E\u306E\u5B66\u3073\u820E\r\n");
 		DIspLabel.setBounds(79, 45, 347, 57);
 		DIspLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		DIspLabel.setFont(new Font("HGs‘‘Ì", Font.PLAIN, 39));
+		DIspLabel.setFont(new Font("HGè¡Œæ›¸ä½“", Font.PLAIN, 39));
 		contentPane.add(DIspLabel);
 		
 		JLabel DispLabel1 = new JLabel("\u656C");
 		DispLabel1.setBounds(22, 13, 151, 77);
 		DispLabel1.setForeground(Color.RED);
 		DispLabel1.setHorizontalAlignment(SwingConstants.CENTER);
-		DispLabel1.setFont(new Font("HGs‘‘Ì", Font.PLAIN, 99));
+		DispLabel1.setFont(new Font("HGè¡Œæ›¸ä½“", Font.PLAIN, 99));
 		contentPane.add(DispLabel1);
 		
 		JButton btnNewButton = new JButton("START");
@@ -71,7 +71,7 @@ public class §ìÀK_2 extends JFrame {
 		
 		JButton btnNewButton_1 = new JButton("\u7D42\u4E86");
 		btnNewButton_1.setBounds(142, 201, 151, 41);
-		btnNewButton_1.setFont(new Font("HGs‘‘Ì", Font.BOLD, 25));
+		btnNewButton_1.setFont(new Font("HGè¡Œæ›¸ä½“", Font.BOLD, 25));
 		contentPane.add(btnNewButton_1);
 		
 		JLabel DispLabel2 = new JLabel("");
