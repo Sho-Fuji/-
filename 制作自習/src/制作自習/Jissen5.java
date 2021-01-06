@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
 
-public class Jissen3 extends JDialog {
+public class Jissen5 extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JButton AnswerButton;
 	private JButton NextButton;
@@ -36,7 +36,7 @@ public class Jissen3 extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			Jissen3 dialog = new Jissen3();
+			Jissen5 dialog = new Jissen5();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -48,7 +48,7 @@ public class Jissen3 extends JDialog {
 	 * Create the dialog.
 	 * @return 
 	 */
-	public Jissen3() {
+	public Jissen5() {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -60,7 +60,7 @@ public class Jissen3 extends JDialog {
 		MessageLabel.setBounds(15, 161, 405, 50);
 		contentPanel.add(MessageLabel);
 		
-		lblNewLabel = new JLabel("不適切なのはどれか");
+		lblNewLabel = new JLabel("次の敬語の使い方のうち、誤っているものはどれでしょうか？");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 12));
@@ -68,20 +68,20 @@ public class Jissen3 extends JDialog {
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(21, 36, 247, 129);
+		panel.setBounds(21, 36, 212, 129);
 		contentPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
-		ARadioButton = new JRadioButton("お会計は合計で5000円です。");
+		ARadioButton = new JRadioButton("<html>部長も、話題の新作をお<br>読みになりましたか<html>");
 		ARadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 12));
 		ARadioButton.setSelected(true);
 		panel.add(ARadioButton);
 		
-		BRadioButton = new JRadioButton("お会計は合計で5000円でございます。");
+		BRadioButton = new JRadioButton("<html>部長も、話題の新作を<br>拝読しましたか<html>");
 		BRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 12));
 		panel.add(BRadioButton);
 		
-		CRadioButton = new JRadioButton("お会計は合計で5000円になります。");
+		CRadioButton = new JRadioButton("<html>部長も、話題の新作を<br>読まれましたか<html>");
 		CRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 12));
 		panel.add(CRadioButton);
 		
@@ -108,17 +108,17 @@ public class Jissen3 extends JDialog {
 				AnswerButton = new JButton("解答");
 				AnswerButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						if(CRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>正解です。<br>「～になります」は変化を表す言葉なので適切ではない。</html>");
+						if(BRadioButton.isSelected()) {
+							kaisetuLabel.setText("<html>正解です。<br>部長は目上の人なので、部長の行動に尊敬語を付けます。「読む」の尊敬語は「読む」＋「～される」、または「お」＋「読む」＋「～される」です。拝読は謙譲語です。</html>");
 							MessageLabel.setText("〇 正解 ");
 							MessageLabel.setForeground(Color.RED);
 						}
-						else if(BRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>不正解です。「～になります」は変化を表す言葉なので適切ではないため、正解は「お会計は合計で5000円になります。」である</html>");
+						else if(ARadioButton.isSelected()) {
+							kaisetuLabel.setText("<html>不正解です。部長は目上の人なので、部長の行動に尊敬語を付けます。「読む」の尊敬語は「読む」＋「～される」、または「お」＋「読む」＋「～される」です。拝読は謙譲語です。</html>");
 							MessageLabel.setText("× 不正解");
 						}
-						else if(ARadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>不正解です。「～になります」は変化を表す言葉なので適切ではないため、正解は「お会計は合計で5000円になります。」である</html>");
+						else if(CRadioButton.isSelected()) {
+							kaisetuLabel.setText("<html>不正解です。部長は目上の人なので、部長の行動に尊敬語を付けます。「読む」の尊敬語は「読む」＋「～される」、または「お」＋「読む」＋「～される」です。拝読は謙譲語です。</html>");
 							MessageLabel.setText("× 不正解");
 						}
 						
