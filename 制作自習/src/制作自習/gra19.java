@@ -31,6 +31,7 @@ public class gra19 extends JDialog {
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
+	private keigomenu menu=new keigomenu();
 
 	/**
 	 * Launch the application.
@@ -135,6 +136,12 @@ public class gra19 extends JDialog {
 				});
 				
 				JButton BackButton = new JButton("戻る");
+				BackButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						setVisible(false);
+						menu.setVisible(true);
+					}
+				});
 				buttonPane.add(BackButton);
 				BackButton.setActionCommand("Cancel");
 				AnswerButton.setActionCommand("OK");
