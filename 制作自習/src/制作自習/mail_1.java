@@ -31,6 +31,7 @@ public class mail_1 extends JDialog {
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
+	private keigomenu menu=new keigomenu();
 
 	/**
 	 * Launch the application.
@@ -64,11 +65,11 @@ public class mail_1 extends JDialog {
 		lblNewLabel = new JLabel("メールを使っても良いのはどれか");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
-		lblNewLabel.setBounds(64, -5, 306, 50);
+		lblNewLabel.setBounds(21, -5, 306, 50);
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(31, 29, 351, 127);
+		panel.setBounds(12, 32, 351, 127);
 		contentPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.LEADING, 5, 5));
 		
