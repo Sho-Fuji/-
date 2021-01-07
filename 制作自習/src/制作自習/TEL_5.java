@@ -31,6 +31,7 @@ public class TEL_5 extends JDialog {
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
+	private keigomenu menu=new keigomenu();
 
 	/**
 	 * Launch the application.
@@ -50,7 +51,7 @@ public class TEL_5 extends JDialog {
 	 * @return 
 	 */
 	public TEL_5() {
-		setBounds(100, 100, 568, 325);
+		setBounds(100, 100, 517, 325);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -63,7 +64,7 @@ public class TEL_5 extends JDialog {
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(10, 46, 518, 127);
+		panel.setBounds(10, 46, 488, 127);
 		contentPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
