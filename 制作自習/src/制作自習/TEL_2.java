@@ -31,6 +31,7 @@ public class TEL_2 extends JDialog {
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
+	private keigomenu menu=new keigomenu();
 
 	/**
 	 * Launch the application.
@@ -56,14 +57,14 @@ public class TEL_2 extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		lblNewLabel = new JLabel("<html>電話の受け方で用件を伺う際、最も<br>適切なものを選べ <html>");
+		lblNewLabel = new JLabel("<html>電話の受け方で用件を伺う際、最も適切な<br>ものを選べ <html>");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
-		lblNewLabel.setBounds(21, -5, 405, 50);
+		lblNewLabel.setBounds(21, 0, 386, 50);
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(21, 44, 284, 127);
+		panel.setBounds(21, 44, 270, 118);
 		contentPanel.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 		
@@ -97,7 +98,7 @@ public class TEL_2 extends JDialog {
 		
 		MessageLabel = new JLabel(" ");
 		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 40));
-		MessageLabel.setBounds(21, 161, 334, 61);
+		MessageLabel.setBounds(21, 172, 334, 50);
 		contentPanel.add(MessageLabel);
 		{
 			JPanel buttonPane = new JPanel();
