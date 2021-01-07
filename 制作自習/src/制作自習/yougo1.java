@@ -32,6 +32,7 @@ public class yougo1 extends JDialog {
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
+	private gra3 n4_2 = new gra3();
 
 	/**
 	 * Launch the application.
@@ -150,7 +151,8 @@ public class yougo1 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						setVisible(false);
+						n4_2.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

@@ -153,7 +153,6 @@ public class gra17 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
 					}
 				});
 				NextButton.setActionCommand("Cancel");

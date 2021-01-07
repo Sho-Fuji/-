@@ -32,6 +32,7 @@ public class keigokiso extends JDialog {
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
+	private gra1 n1 = new gra1();
 
 	/**
 	 * Launch the application.
@@ -147,7 +148,8 @@ public class keigokiso extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						setVisible(false);
+						n1.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

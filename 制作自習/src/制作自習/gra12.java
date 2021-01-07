@@ -32,6 +32,7 @@ public class gra12 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
+	private gra13 n5 = new gra13();
 
 	/**
 	 * Launch the application.
@@ -153,7 +154,8 @@ public class gra12 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						setVisible(false);
+						n5.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");
