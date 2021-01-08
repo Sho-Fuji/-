@@ -31,7 +31,7 @@ public class TEL_5 extends JDialog {
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
-	private keigomenu menu=new keigomenu();
+	private BMS12 n5 = new BMS12();
 
 	/**
 	 * Launch the application.
@@ -146,7 +146,8 @@ public class TEL_5 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						setVisible(false);
+						n5.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");
