@@ -32,7 +32,7 @@ public class TEL_6 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
-
+	private BMS20 n9 = new BMS20();
 	/**
 	 * Launch the application.
 	 */
@@ -147,7 +147,8 @@ public class TEL_6 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						setVisible(false);
+						n9.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");
