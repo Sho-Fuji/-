@@ -25,7 +25,6 @@ public class keigoapp extends JFrame {
 
 	private JPanel contentPane;
 	private keigomenu menu=new keigomenu();
-
 	/**
 	 * Launch the application.
 	 */
@@ -70,6 +69,7 @@ public class keigoapp extends JFrame {
 		JButton StartButton = new JButton("START");
 		StartButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				menu.okFlag=false;
 				setVisible(false);
 				menu.setVisible(true);
 				setVisible(menu.okFlag);

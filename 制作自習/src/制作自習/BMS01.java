@@ -32,6 +32,7 @@ public class BMS01 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
+	private jissen1 j2 = new jissen1();
 	/**
 	 * Launch the application.
 	 */
@@ -151,7 +152,8 @@ public class BMS01 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						setVisible(false);
+						j2.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

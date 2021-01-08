@@ -32,6 +32,7 @@ public class mail_4 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
+	private BMS13 j8 = new BMS13();
 
 	/**
 	 * Launch the application.
@@ -136,6 +137,12 @@ public class mail_4 extends JDialog {
 				});
 				
 				JButton BackButton = new JButton("戻る");
+				BackButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						setVisible(false);
+						menu.setVisible(true);
+					}
+				});
 				buttonPane.add(BackButton);
 				BackButton.setActionCommand("Cancel");
 				AnswerButton.setActionCommand("OK");
@@ -147,7 +154,8 @@ public class mail_4 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						setVisible(false);
+						j8.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

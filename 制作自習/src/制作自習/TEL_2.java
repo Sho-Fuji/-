@@ -32,6 +32,7 @@ public class TEL_2 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
+	private BMS19 j10 = new BMS19();
 
 	/**
 	 * Launch the application.
@@ -135,6 +136,12 @@ public class TEL_2 extends JDialog {
 				});
 				
 				JButton BackButton = new JButton("戻る");
+				BackButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						setVisible(false);
+						menu.setVisible(true);
+					}
+				});
 				buttonPane.add(BackButton);
 				BackButton.setActionCommand("Cancel");
 				AnswerButton.setActionCommand("OK");
@@ -146,7 +153,8 @@ public class TEL_2 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						setVisible(false);
+						j10.setVisible(false);
 					}
 				});
 				NextButton.setActionCommand("Cancel");
