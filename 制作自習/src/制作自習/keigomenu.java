@@ -28,7 +28,7 @@ public class keigomenu extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private ImageIcon Img = new ImageIcon("data\\背景.png");
-	public boolean okFlag=false;
+	public boolean okFlag;
 	/**
 	 * Launch the application.
 	 */
