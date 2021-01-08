@@ -51,6 +51,7 @@ public class gra16 extends JDialog {
 	 * Create the dialog.
 	 */
 	public gra16() {
+		random1 R=new random1();
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -124,6 +125,7 @@ public class gra16 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>「確認します」は丁寧語であり、謙譲語は存在しない。</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							R.setcount();
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「改める」である。<br>「確認します」は丁寧語であり、謙譲語は存在しない。</html>");

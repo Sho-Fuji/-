@@ -6,7 +6,7 @@ import java.util.Random;
  */
 public class random1 {
 	Random random=new Random();
-	
+	int count=0;
 
 	
 	public void RM1() {
@@ -19,5 +19,17 @@ public class random1 {
 				b.setVisible(true);
 			}
 		}		
+	}
+	
+	public void setcount(){
+		count+=1;
+	}
+	
+	public int getcount() {
+		return (count);
+	}
+	
+	public void recount() {
+		count=0;
 	}
 }

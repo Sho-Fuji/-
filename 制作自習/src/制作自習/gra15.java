@@ -53,6 +53,7 @@ public class gra15 extends JDialog {
 	 * Create the dialog.
 	 */
 	public gra15() {
+		random1 R=new random1();
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -134,6 +135,7 @@ public class gra15 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>「ご存じ」は”お客様”を表す尊敬語であり、「存じる」は”私”を表す謙譲語であるため不適切</html>"); 
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							R.setcount();
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「差し上げる」である。<br>「ご存じ」は”お客様”を表す尊敬語であり、「存じる」は”私”を表す謙譲語であるため不適切</html>");  	

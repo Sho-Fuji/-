@@ -51,6 +51,7 @@ public class gra13 extends JDialog {
 	 * Create the dialog.
 	 */
 	public gra13() {
+		random1 R=new random1();
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -136,6 +137,7 @@ public class gra13 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>「思います」は丁寧語であり、「思われる」は”お客様”への言葉であるため不適切</html>"); 						 
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							R.setcount();
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
