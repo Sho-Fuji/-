@@ -46,6 +46,7 @@ public class keigomenu extends JDialog {
 	 * Create the dialog.
 	 */
 	public keigomenu() {
+		random1 R=new random1();
 		setModalityType(ModalityType.APPLICATION_MODAL);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
@@ -61,6 +62,12 @@ public class keigomenu extends JDialog {
 		contentPanel.add(DispLabel);
 		
 		JButton Button1 = new JButton("文法編");
+		Button1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				R.RM1();
+				setVisible(false);
+			}
+		});
 		Button1.setBounds(156, 65, 127, 36);
 		contentPanel.add(Button1);
 		
