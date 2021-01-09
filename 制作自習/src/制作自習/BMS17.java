@@ -32,6 +32,7 @@ public class BMS17 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
+	private TEL_4 w8 = new TEL_4();
 	/**
 	 * Launch the application.
 	 */
@@ -153,7 +154,8 @@ public class BMS17 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						setVisible(false);
+						w8.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

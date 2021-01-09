@@ -30,7 +30,7 @@ public class Jissen3 extends JDialog {
 	private JRadioButton CRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
-
+	private TEL w2 = new TEL();
 	/**
 	 * Launch the application.
 	 */
@@ -143,7 +143,8 @@ public class Jissen3 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						setVisible(false);
+						w2.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");
