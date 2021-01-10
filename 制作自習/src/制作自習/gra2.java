@@ -34,7 +34,7 @@ public class gra2 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private gra21 m3 = new gra21();
-
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -133,6 +133,7 @@ public class gra2 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>「いらっしゃる」は尊敬語であり、「参る」は謙譲語である。</html>"); 
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「来ます」である。<br>「いらっしゃる」は尊敬語であり、「参る」は謙譲語である</html>"); 
@@ -155,6 +156,7 @@ public class gra2 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						m3.count=count;
 						setVisible(false);
 						m3.setVisible(true);
 					}

@@ -34,6 +34,7 @@ public class gra6 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private gra7 m8 = new gra7();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -137,6 +138,7 @@ public class gra6 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>謙譲語は、自分が言う言葉であるため、「～させていただく」といった敬意を払った表現となる。</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -155,6 +157,7 @@ public class gra6 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						m8.count=count;
 						setVisible(false);
 						m8.setVisible(true);
 					}

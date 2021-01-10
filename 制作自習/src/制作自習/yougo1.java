@@ -32,7 +32,9 @@ public class yougo1 extends JDialog {
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
+	private keigomenu menu=new keigomenu();
 	private gra3 n4_2 = new gra3();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -101,6 +103,12 @@ public class yougo1 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -129,6 +137,7 @@ public class yougo1 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>ポートフォリオは自分の実績や力量がわかるような作品集のことです</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。<br>ポートフォリオは自分の実績や力量がわかるような作品集のことです</html>");
@@ -151,6 +160,7 @@ public class yougo1 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						n4_2.count=count;
 						setVisible(false);
 						n4_2.setVisible(true);
 					}
