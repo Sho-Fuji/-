@@ -31,8 +31,9 @@ public class gra17 extends JDialog {
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
-	private keigomenu menu=new keigomenu();
-
+	public keigomenu menu=new keigomenu();
+	public cotest C=new cotest();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -50,7 +51,6 @@ public class gra17 extends JDialog {
 	 * Create the dialog.
 	 */
 	public gra17() {
-		random1 R=new random1();
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -136,7 +136,8 @@ public class gra17 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>「かしこまる」は謙譲語であり、尊敬語は存在しない</html>"); 						 
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
-							R.setcount();
+							count+=1;
+							
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -155,6 +156,9 @@ public class gra17 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						C.count=count;
+						C.setVisible(true);
+						setVisible(false);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

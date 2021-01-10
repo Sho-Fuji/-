@@ -34,7 +34,7 @@ public class keigokiso extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private gra1 n1 = new gra1();
-
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -52,7 +52,6 @@ public class keigokiso extends JDialog {
 	 * Create the dialog.
 	 */
 	public keigokiso() {
-		random1 R=new random1();
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -134,7 +133,7 @@ public class keigokiso extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>「おっしゃる」は尊敬語であり、「申す、申し上げる」は謙譲語である。</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
-							R.setcount();
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「言います」<br>「おっしゃる」は尊敬語であり、「申す、申し上げる」は謙譲語である。</html>");
@@ -157,6 +156,7 @@ public class keigokiso extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						n1.count=count;
 						setVisible(false);
 						n1.setVisible(true);
 					}

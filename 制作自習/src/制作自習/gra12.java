@@ -33,7 +33,7 @@ public class gra12 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private gra13 n5 = new gra13();
-
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -51,7 +51,6 @@ public class gra12 extends JDialog {
 	 * Create the dialog.
 	 */
 	public gra12() {
-		random1 R=new random1();
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -137,7 +136,8 @@ public class gra12 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>「会います」は丁寧語であり、「お目にかかる」は謙譲語のため不適切。</html>"); 
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
-							R.setcount();
+							count+=1;
+							
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -156,6 +156,7 @@ public class gra12 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						n5.count=count;
 						setVisible(false);
 						n5.setVisible(true);
 					}

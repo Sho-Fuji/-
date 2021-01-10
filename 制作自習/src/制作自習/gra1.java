@@ -20,6 +20,7 @@ import java.awt.Color;
 
 public class gra1 extends JDialog {
 
+	
 	private final JPanel contentPanel = new JPanel();
 	private JButton AnswerButton;
 	private JButton NextButton;
@@ -34,6 +35,7 @@ public class gra1 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private gra10 n2 = new gra10();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -51,7 +53,6 @@ public class gra1 extends JDialog {
 	 * Create the dialog.
 	 */
 	public gra1() {
-		random1 R=new random1();
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -125,7 +126,7 @@ public class gra1 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>「おっしゃる」は尊敬語であり、「申す、申し上げる」は謙譲語である。</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
-							R.setcount();
+							count+=1;
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「言います」<br>「おっしゃる」は尊敬語であり、「申す、申し上げる」は謙譲語である。</html>");
@@ -156,6 +157,7 @@ public class gra1 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						n2.count=count;
 						setVisible(false);
 						n2.setVisible(true);
 					}

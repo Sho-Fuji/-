@@ -34,7 +34,7 @@ public class gra11 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private gra12 n4 = new gra12();
-
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -52,7 +52,6 @@ public class gra11 extends JDialog {
 	 * Create the dialog.
 	 */
 	public gra11() {
-		random1 R=new random1();
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -134,7 +133,7 @@ public class gra11 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>「いただく」と「ちょうだいする」は謙譲語であり、「食べます」はて丁寧語である。</html>"); 
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
-							R.setcount();
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。<br>正解は、”お客様”を表す「なさる」である。”お客様”がということなので「いたす」、「します」は不適切。</html>"); 
@@ -157,6 +156,7 @@ public class gra11 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						n4.count=count;
 						setVisible(false);
 						n4.setVisible(true);
 					}
