@@ -32,7 +32,7 @@ public class TEL_4 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
-
+	private gra19 w9 = new gra19();
 	/**
 	 * Launch the application.
 	 */
@@ -147,7 +147,8 @@ public class TEL_4 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						setVisible(false);
+						w9.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

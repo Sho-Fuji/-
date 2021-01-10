@@ -17,7 +17,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
 
-public class BMS17 extends JDialog {
+public class yougo4 extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
 	private JButton AnswerButton;
@@ -30,15 +30,13 @@ public class BMS17 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
-	private JLabel MessageLabel;
-	private keigomenu menu=new keigomenu();
-	private TEL_4 w8 = new TEL_4();
+
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		try {
-			BMS17 dialog = new BMS17();
+			yougo4 dialog = new yougo4();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -49,18 +47,18 @@ public class BMS17 extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public BMS17() {
+	public yougo4() {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		lblNewLabel = new JLabel("<html>贈答の水引きおいて結びきりにする場合として正しいものはどれ</html>");
+		lblNewLabel = new JLabel("最高執行責任者は？");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 15));
-		lblNewLabel.setBounds(34, 10, 319, 57);
+		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
+		lblNewLabel.setBounds(34, 10, 319, 50);
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
@@ -68,20 +66,20 @@ public class BMS17 extends JDialog {
 		contentPanel.add(panel);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 		
-		ARadioButton = new JRadioButton("結婚");
+		ARadioButton = new JRadioButton("CTO");
 		ARadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		ARadioButton.setSelected(true);
 		panel.add(ARadioButton);
 		
-		BRadioButton = new JRadioButton("出産");
+		BRadioButton = new JRadioButton("CEO");
 		BRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		panel.add(BRadioButton);
 		
-		CRadioButton = new JRadioButton("入学");
+		CRadioButton = new JRadioButton("CIO");
 		CRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		panel.add(CRadioButton);
 		
-		DRadioButton = new JRadioButton("年賀");
+		DRadioButton = new JRadioButton("COO");
 		DRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
 		panel.add(DRadioButton);
 		
@@ -92,26 +90,14 @@ public class BMS17 extends JDialog {
 		bg.add(DRadioButton);
 		
 		kaisetuLabel = new JLabel(" ");
-		kaisetuLabel.setFont(new Font("MS UI Gothic", Font.PLAIN, 15));
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
-		kaisetuLabel.setBounds(34, 180, 334, 80);
+		kaisetuLabel.setBounds(34, 137, 334, 123);
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
-		BackButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				menu.setVisible(true);
-			}
-		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
-		
-		MessageLabel = new JLabel("");
-		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 40));
-		MessageLabel.setBounds(34, 137, 334, 57);
-		contentPanel.add(MessageLabel);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -121,21 +107,16 @@ public class BMS17 extends JDialog {
 				AnswerButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						if(ARadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>二度あっては困ることの場合が結びきり、何度あってもよいことの場合が蝶結びを使う</html>");
-							MessageLabel.setText("〇 正解");
-							MessageLabel.setForeground(Color.RED);
+							kaisetuLabel.setText("<html>不正解です。正解は「COO」<br>CEO = Chief Executive Officer = 最高経営責任者<br>CIO = Chief Information Officer = 最高情報責任者<br>COO = Chief Operations Officer = 最高執行責任者<br>CTO = Chief Technology Officer = 最高技術責任者</html>");
 						}
 						else if(BRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>正解は「結婚」<br>二度あっては困ることの場合が結びきり、何度あってもよいことの場合が蝶結びを使う</html>");
-							MessageLabel.setText("× 不正解");
+							kaisetuLabel.setText("<html>不正解です。正解は「COO」<br>CEO = Chief Executive Officer = 最高経営責任者<br>CIO = Chief Information Officer = 最高情報責任者<br>COO = Chief Operations Officer = 最高執行責任者<br>CTO = Chief Technology Officer = 最高技術責任者</html>");
 						}
 						else if(CRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>正解は「結婚」<br>二度あっては困ることの場合が結びきり、何度あってもよいことの場合が蝶結びを使う</html>");
-							MessageLabel.setText("× 不正解");
+							kaisetuLabel.setText("<html>不正解です。正解は「COO」<br>CEO = Chief Executive Officer = 最高経営責任者<br>CIO = Chief Information Officer = 最高情報責任者<br>COO = Chief Operations Officer = 最高執行責任者<br>CTO = Chief Technology Officer = 最高技術責任者</html>");
 						}
 						else if(DRadioButton.isSelected()) {
-							kaisetuLabel.setText("<html>正解は「結婚」<br>二度あっては困ることの場合が結びきり、何度あってもよいことの場合が蝶結びを使う</html>");
-							MessageLabel.setText("× 不正解");
+							kaisetuLabel.setText("<html>正解です<br>CEO = Chief Executive Officer = 最高経営責任者<br>CIO = Chief Information Officer = 最高情報責任者<br>COO = Chief Operations Officer = 最高執行責任者<br>CTO = Chief Technology Officer = 最高技術責任者</html>");
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -154,8 +135,7 @@ public class BMS17 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						setVisible(false);
-						w8.setVisible(true);
+						
 					}
 				});
 				NextButton.setActionCommand("Cancel");
@@ -164,3 +144,4 @@ public class BMS17 extends JDialog {
 		}
 	}
 }
+

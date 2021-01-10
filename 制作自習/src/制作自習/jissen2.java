@@ -31,6 +31,8 @@ public class jissen2 extends JDialog {
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
+	private keigomenu menu = new keigomenu();
+	private BMS14 k6 = new BMS14();
 
 	/**
 	 * Launch the application.
@@ -139,6 +141,12 @@ public class jissen2 extends JDialog {
 				});
 				
 				JButton BackButton = new JButton("戻る");
+				BackButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						setVisible(false);
+						menu.setVisible(true);
+					}
+				});
 				buttonPane.add(BackButton);
 				BackButton.setActionCommand("Cancel");
 				AnswerButton.setActionCommand("OK");
@@ -150,7 +158,8 @@ public class jissen2 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						setVisible(false);
+						k6.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");
