@@ -62,33 +62,33 @@ public class yougo1 extends JDialog {
 		lblNewLabel = new JLabel("ポートフォリオとは？");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
-		lblNewLabel.setBounds(34, 10, 319, 50);
+		lblNewLabel.setBounds(10, 10, 319, 50);
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(10, 70, 416, 113);
+		panel.setBounds(20, 70, 416, 119);
 		contentPanel.add(panel);
 		panel.setLayout(null);
 		
 		ARadioButton = new JRadioButton("履歴書のこと");
 		ARadioButton.setBounds(0, 6, 109, 25);
-		ARadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
+		ARadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 12));
 		ARadioButton.setSelected(true);
 		panel.add(ARadioButton);
 		
 		BRadioButton = new JRadioButton("試験等の合格証明書のこと");
 		BRadioButton.setBounds(0, 33, 193, 25);
-		BRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
+		BRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 13));
 		panel.add(BRadioButton);
 		
 		CRadioButton = new JRadioButton("自分の実績や力量がわかるような作品集のこと");
 		CRadioButton.setBounds(0, 60, 319, 25);
-		CRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
+		CRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 13));
 		panel.add(CRadioButton);
 		
 		DRadioButton = new JRadioButton("要件定義書のこと");
 		DRadioButton.setBounds(0, 87, 137, 25);
-		DRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
+		DRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 13));
 		panel.add(DRadioButton);
 		
 		bg = new ButtonGroup();

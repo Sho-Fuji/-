@@ -66,25 +66,25 @@ public class gra14 extends JDialog {
 		contentPanel.add(lblNewLabel);
 		
 		panel = new JPanel();
-		panel.setBounds(34, 70, 334, 57);
+		panel.setBounds(34, 70, 359, 57);
 		contentPanel.add(panel);
 		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
 		
 		ARadioButton = new JRadioButton("ご存じ");
-		ARadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
+		ARadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 13));
 		ARadioButton.setSelected(true);
 		panel.add(ARadioButton);
 		
 		BRadioButton = new JRadioButton("知っています");
-		BRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
+		BRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 13));
 		panel.add(BRadioButton);
 		
 		CRadioButton = new JRadioButton("存じる");
-		CRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
+		CRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 13));
 		panel.add(CRadioButton);
 		
 		DRadioButton = new JRadioButton("知っておられる");
-		DRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 14));
+		DRadioButton.setFont(new Font("UD デジタル 教科書体 N-B", Font.PLAIN, 13));
 		panel.add(DRadioButton);
 		
 		bg = new ButtonGroup();
