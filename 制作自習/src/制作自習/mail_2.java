@@ -32,6 +32,8 @@ public class mail_2 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
+	public cotest C=new cotest();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -115,6 +117,7 @@ public class mail_2 extends JDialog {
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。 半角カタカナや特殊記号を使用すると相手に届いた際に暗号化されている可能性があるので使用しないようにする。</html>");
 							MessageLabel.setText("〇 正解");
+							count+=1;
 						}
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。読みやすい文章を心がけることはとても大事なことですが、問題はやってはいけないことなのでここでは不正解です。</html>");
@@ -146,7 +149,9 @@ public class mail_2 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						C.count=count;
+						C.setVisible(true);
+						setVisible(false);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

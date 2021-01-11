@@ -33,6 +33,7 @@ public class BMS18 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private mail_2 k10 = new mail_2();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -132,6 +133,7 @@ public class BMS18 extends JDialog {
 							kaisetuLabel.setText("<html>「御香典」は仏式、「御神前」「御榊料」は神式の時の表書きである</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解は「御花料」<br>「御香典」は仏式、「御神前」「御榊料」は神式の時の表書きである</html>");
@@ -154,6 +156,7 @@ public class BMS18 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						k10.count=count;
 						setVisible(false);
 						k10.setVisible(true);
 					}
