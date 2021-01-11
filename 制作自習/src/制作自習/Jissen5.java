@@ -31,6 +31,7 @@ public class Jissen5 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private BMS11 n3 = new BMS11();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -112,6 +113,7 @@ public class Jissen5 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>部長は目上の人なので、部長の行動に尊敬語を付けます。「読む」の尊敬語は「読む」＋「～される」、または「お」＋「読む」＋「～される」です。拝読は謙譲語です。</html>");
 							MessageLabel.setText("〇 正解 ");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(ARadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。部長は目上の人なので、部長の行動に尊敬語を付けます。「読む」の尊敬語は「読む」＋「～される」、または「お」＋「読む」＋「～される」です。拝読は謙譲語です。</html>");
@@ -143,6 +145,7 @@ public class Jissen5 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						n3.count=count;
 						setVisible(false);
 						n3.setVisible(true);
 					}

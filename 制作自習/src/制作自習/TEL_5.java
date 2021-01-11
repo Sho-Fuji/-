@@ -32,6 +32,7 @@ public class TEL_5 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private BMS12 n5 = new BMS12();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -112,6 +113,7 @@ public class TEL_5 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。「○○様をお願いできますでしょうか」という依頼の仕方は間違いです。</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「○○様をお願いできますでしょうか」が正解です。</html>");
@@ -146,6 +148,7 @@ public class TEL_5 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						n5.count=count;
 						setVisible(false);
 						n5.setVisible(true);
 					}

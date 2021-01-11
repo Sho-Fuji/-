@@ -33,6 +33,7 @@ public class mail_1 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private BMS16 n7 = new BMS16();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -123,6 +124,7 @@ public class mail_1 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。社内で大人数に同じ情報を送るが正しいです。<br>社内で大人数に情報共有をする場合はメールでの一斉送信をしても良いです。</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は社内で大人数に同じ情報を送るが正しいです。<br>メールをあまり使用しない人はメールが届いていることに気づかない可能性があるのでメールより電話の方が良い。</html>");
@@ -149,6 +151,7 @@ public class mail_1 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						n7.count=count;
 						setVisible(false);
 						n7.setVisible(true);
 					}

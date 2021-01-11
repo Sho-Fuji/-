@@ -33,6 +33,7 @@ public class BMS16 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private TEL_6 n8 = new TEL_6();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -132,6 +133,7 @@ public class BMS16 extends JDialog {
 							kaisetuLabel.setText("<html>弔事全般やお見舞いなどよくないことの場合は熨斗をつけない。陣中見舞いは活気づけになるお見舞いなので熨斗をつける</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解は「お見舞い」<br>弔事全般やお見舞いなどよくないことの場合は熨斗をつけない。陣中見舞いは活気づけになるお見舞いなので熨斗をつける</html>");
@@ -154,6 +156,7 @@ public class BMS16 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						n8.count=count;
 						setVisible(false);
 						n8.setVisible(true);
 					}

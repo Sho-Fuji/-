@@ -31,6 +31,8 @@ public class jissen9 extends JDialog {
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
+	public cotest C=new cotest();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -110,6 +112,7 @@ public class jissen9 extends JDialog {
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。</html>");
 							MessageLabel.setText("〇 正解");
+							count+=1;
 						
 						}			
 						ARadioButton.setEnabled(false);
@@ -127,6 +130,9 @@ public class jissen9 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						C.count=count;
+						C.setVisible(true);
+						setVisible(false);
 						
 					}
 				});

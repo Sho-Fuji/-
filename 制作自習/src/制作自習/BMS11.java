@@ -33,6 +33,7 @@ public class BMS11 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private TEL_5 n4 = new TEL_5();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -132,6 +133,7 @@ public class BMS11 extends JDialog {
 							kaisetuLabel.setText("<html>「厳冬の候」は1月の挨拶であり、「浅春の候」「春分の候」は3月の挨拶である</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解は「春寒の候」<br>「厳冬の候」は1月の挨拶であり、「浅春の候」「春分の候」は3月の挨拶である</html>");
@@ -154,6 +156,7 @@ public class BMS11 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						n4.count=count;
 						setVisible(false);
 						n4.setVisible(true);
 					}

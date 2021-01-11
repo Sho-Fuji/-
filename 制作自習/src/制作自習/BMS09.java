@@ -33,6 +33,7 @@ public class BMS09 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private Jissen5 n2 = new Jissen5();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -136,6 +137,7 @@ public class BMS09 extends JDialog {
 							kaisetuLabel.setText("<html>「契約書」は法的文書であり「請求書」「督促状」「見積書」のすべては実務文書である</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -154,6 +156,7 @@ public class BMS09 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						n2.count=count;
 						setVisible(false);
 						n2.setVisible(true);
 					}
