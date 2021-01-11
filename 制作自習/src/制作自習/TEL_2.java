@@ -33,6 +33,7 @@ public class TEL_2 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private BMS19 j10 = new BMS19();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -121,6 +122,7 @@ public class TEL_2 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。「メモを取った後、復唱し確認する。」が最も適切です。</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「メモを取った後、復唱し確認する。」が最も適切です。</html>");
@@ -153,8 +155,9 @@ public class TEL_2 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						j10.count=count;
 						setVisible(false);
-						j10.setVisible(false);
+						j10.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

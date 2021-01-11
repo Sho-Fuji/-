@@ -33,7 +33,7 @@ public class mail_4 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private BMS13 j8 = new BMS13();
-
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -121,6 +121,7 @@ public class mail_4 extends JDialog {
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。 全ての情報を必ず入れる必要はありません。</html>");
 							MessageLabel.setText("〇 正解");
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。相手が読みやすいように区切りを入れる方が良いです。</html>");
@@ -154,6 +155,7 @@ public class mail_4 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						j8.count=count;
 						setVisible(false);
 						j8.setVisible(true);
 					}

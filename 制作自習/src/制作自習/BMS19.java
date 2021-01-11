@@ -32,6 +32,8 @@ public class BMS19 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
+	public cotest C=new cotest();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -135,6 +137,7 @@ public class BMS19 extends JDialog {
 							kaisetuLabel.setText("<html>仏式の場合は「黒白」、「白」「銀」は神式の場合。また、神式で「黒白」を使うこともできる</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -153,6 +156,9 @@ public class BMS19 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						C.count=count;
+						C.setVisible(true);
+						setVisible(false);
 						
 					}
 				});

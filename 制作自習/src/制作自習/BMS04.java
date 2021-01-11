@@ -33,6 +33,7 @@ public class BMS04 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private jissen10 j5 = new jissen10();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -136,6 +137,7 @@ public class BMS04 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>お客様より低い位置で案内するため、案内者は後で上がる</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -154,6 +156,7 @@ public class BMS04 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						j5.count=count;
 						setVisible(false);
 						j5.setVisible(true);
 					}

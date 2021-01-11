@@ -33,6 +33,7 @@ public class BMS10 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private BMS01 j1 = new BMS01();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -132,6 +133,7 @@ public class BMS10 extends JDialog {
 							kaisetuLabel.setText("<html>「委任状」「礼状」は社交文書であり、「契約書」は法的文書である</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解は「案内状」<br>「委任状」「礼状」は社交文書であり、「契約書」は法的文書である</html>");
@@ -154,6 +156,7 @@ public class BMS10 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						j1.count=count;
 						setVisible(false);
 						j1.setVisible(true);
 					}

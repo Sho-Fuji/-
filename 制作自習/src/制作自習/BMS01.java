@@ -33,6 +33,7 @@ public class BMS01 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private jissen1 j2 = new jissen1();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -122,6 +123,7 @@ public class BMS01 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>30度は「普通礼」であり、45度は「敬礼」である。</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「15度」<br>30度は「普通礼」であり、45度は「敬礼」である。</html>");
@@ -152,6 +154,7 @@ public class BMS01 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						j2.count=count;
 						setVisible(false);
 						j2.setVisible(true);
 					}
