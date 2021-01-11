@@ -21,4 +21,21 @@ public class random1 {
 		}		
 	}
 	
+	public void RM2() {
+		BMS10 a=new BMS10();
+		BMS02 b=new BMS02();
+		BMS03 c=new BMS03();
+		BMS09 d=new BMS09();
+		int RM=random.nextInt(4);{
+			if(RM==0) {
+				a.setVisible(true);
+			}else if(RM==1) {
+				b.setVisible(true);
+			}else if(RM==2) {
+				c.setVisible(true);
+			}else if(RM==3) {
+				d.setVisible(true);
+			}
+		}
+	}
 }

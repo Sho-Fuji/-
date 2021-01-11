@@ -72,6 +72,12 @@ public class keigomenu extends JDialog {
 		contentPanel.add(Button1);
 		
 		JButton Button2 = new JButton("実践編");
+		Button2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				R.RM2();
+				setVisible(false);
+			}
+		});
 		Button2.setBounds(156, 111, 127, 36);
 		contentPanel.add(Button2);
 		
