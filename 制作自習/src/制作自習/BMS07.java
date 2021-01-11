@@ -33,6 +33,7 @@ public class BMS07 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private mail_3 w4 = new mail_3();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -132,6 +133,7 @@ public class BMS07 extends JDialog {
 							kaisetuLabel.setText("<html>「議事録」は会議の決定事項や経過を記録するもの<br>「始末書」はトラブルの事実を報告し詫びるもの<br>「届出書」は会社に届け出るもの</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解は「顛末書」<br>「議事録」は会議の決定事項や経過を記録するもの<br>「始末書」はトラブルの事実を報告し詫びるもの<br>「届出書」は会社に届け出るもの</html>");
@@ -154,6 +156,7 @@ public class BMS07 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						w4.count=count;
 						setVisible(false);
 						w4.setVisible(true);
 					}

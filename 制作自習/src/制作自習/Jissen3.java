@@ -31,6 +31,7 @@ public class Jissen3 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private TEL w2 = new TEL();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -112,6 +113,7 @@ public class Jissen3 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。<br>「～になります」は変化を表す言葉なので適切ではない。</html>");
 							MessageLabel.setText("〇 正解 ");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。「～になります」は変化を表す言葉なので適切ではないため、正解は「お会計は合計で5000円になります。」である</html>");
@@ -143,6 +145,7 @@ public class Jissen3 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						w2.count=count;
 						setVisible(false);
 						w2.setVisible(true);
 					}

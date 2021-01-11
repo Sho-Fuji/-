@@ -33,6 +33,7 @@ public class BMS15 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private Jissen4 w6 = new Jissen4();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -136,6 +137,7 @@ public class BMS15 extends JDialog {
 							kaisetuLabel.setText("<html>「ご清祥」は相手の健康を祝う挨拶であり、他には「ご健勝」などがある</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -154,6 +156,7 @@ public class BMS15 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						w6.count=count;
 						setVisible(false);
 						w6.setVisible(true);
 					}

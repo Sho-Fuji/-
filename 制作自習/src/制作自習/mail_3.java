@@ -33,6 +33,7 @@ public class mail_3 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private BMS15 w5 = new BMS15();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -113,6 +114,7 @@ public class mail_3 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。添付ファイルだけを送るのは相手に失礼です。一言付け加えるほうが良いです。</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。添付ファイルにパスワードを設定し、別でパスワードを連絡することは良いですが、問題は誤っているものなのでここでは不正解です。</html>");
@@ -147,6 +149,7 @@ public class mail_3 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						w5.count=count;
 						setVisible(false);
 						w5.setVisible(true);
 					}

@@ -32,6 +32,8 @@ public class gra19 extends JDialog {
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
+	public cotest C=new cotest();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -121,6 +123,7 @@ public class gra19 extends JDialog {
 							kaisetuLabel.setText("<html>不正解です。<br>初めての相手先への連絡は「固定電話」が望ましい</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「初めての相手先へは携帯電話を優先する」である。初めての相手先への連絡は「固定電話」が望ましい</html>");
@@ -153,6 +156,9 @@ public class gra19 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						C.count=count;
+						C.setVisible(true);
+						setVisible(false);
 						
 					}
 				});

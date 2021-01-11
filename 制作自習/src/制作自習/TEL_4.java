@@ -33,6 +33,7 @@ public class TEL_4 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private gra19 w9 = new gra19();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -117,6 +118,7 @@ public class TEL_4 extends JDialog {
 							kaisetuLabel.setText("<html>正解です。電話を掛ける際は、始業直後、終業直前、昼食時以外に掛けるように気をつけましょう。</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「始業直後、終業直前、昼食時以外に掛ける。」が正しいです。</html>");
@@ -147,6 +149,7 @@ public class TEL_4 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						w9.count=count;
 						setVisible(false);
 						w9.setVisible(true);
 					}

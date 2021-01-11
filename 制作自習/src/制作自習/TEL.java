@@ -33,6 +33,7 @@ public class TEL extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private BMS07 w3 = new BMS07();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -124,6 +125,7 @@ public class TEL extends JDialog {
 							kaisetuLabel.setText("<html>正解です。正解は「はい。おはようございます」と出る。が正しいです。</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -146,6 +148,7 @@ public class TEL extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						w3.count=count;
 						setVisible(false);
 						w3.setVisible(true);
 					}

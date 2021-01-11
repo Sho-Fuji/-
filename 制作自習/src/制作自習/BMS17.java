@@ -33,6 +33,7 @@ public class BMS17 extends JDialog {
 	private JLabel MessageLabel;
 	private keigomenu menu=new keigomenu();
 	private TEL_4 w8 = new TEL_4();
+	public int count=0;
 	/**
 	 * Launch the application.
 	 */
@@ -124,6 +125,7 @@ public class BMS17 extends JDialog {
 							kaisetuLabel.setText("<html>二度あっては困ることの場合が結びきり、何度あってもよいことの場合が蝶結びを使う</html>");
 							MessageLabel.setText("〇 正解");
 							MessageLabel.setForeground(Color.RED);
+							count+=1;
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解は「結婚」<br>二度あっては困ることの場合が結びきり、何度あってもよいことの場合が蝶結びを使う</html>");
@@ -154,6 +156,7 @@ public class BMS17 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
+						w8.count=count;
 						setVisible(false);
 						w8.setVisible(true);
 					}
