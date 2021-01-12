@@ -60,7 +60,7 @@ public class mail_3 extends JDialog {
 		
 		lblNewLabel = new JLabel("ビジネスメールで添付ファイルなどを送る際、誤っているものは？ ");
 		lblNewLabel.setForeground(Color.RED);
-		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 15));
+		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 14));
 		lblNewLabel.setBounds(0, -5, 455, 50);
 		contentPanel.add(lblNewLabel);
 		
