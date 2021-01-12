@@ -114,11 +114,11 @@ public class jissen10 extends JDialog {
 						if(ARadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「参りました。」である</html>");
 							MessageLabel.setText("× 不正解");
-							MessageLabel.setForeground(Color.RED);
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。</html>");
 							MessageLabel.setText("〇 正解");
+							MessageLabel.setForeground(Color.RED);
 							count+=1;
 						
 						}			
