@@ -68,7 +68,7 @@ public class keigomenu extends JDialog {
 				setVisible(false);
 			}
 		});
-		Button1.setBounds(156, 65, 127, 36);
+		Button1.setBounds(156, 65, 127, 51);
 		contentPanel.add(Button1);
 		
 		JButton Button2 = new JButton("実践編");
@@ -78,12 +78,10 @@ public class keigomenu extends JDialog {
 				setVisible(false);
 			}
 		});
-		Button2.setBounds(156, 111, 127, 36);
+		Button2.setBounds(156, 138, 127, 51);
 		contentPanel.add(Button2);
 		
-		JButton Button3 = new JButton("復習編");
-		Button3.setBounds(156, 157, 127, 36);
-		contentPanel.add(Button3);
+		
 					
 		JButton CancelButton = new JButton("戻る");
 		CancelButton.addActionListener(new ActionListener() {
