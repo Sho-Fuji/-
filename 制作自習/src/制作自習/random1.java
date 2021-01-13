@@ -12,7 +12,7 @@ public class random1 {
 	public void RM1() {
 		 keigokiso a=new keigokiso();
 		 gra18 b=new gra18();
-		int RM=random.nextInt(2);{
+		int RM=random.nextInt(1);{
 			if(RM==0) {
 				a.setVisible(true);
 			}else if(RM==1) {
@@ -26,7 +26,7 @@ public class random1 {
 		BMS02 b=new BMS02();
 		BMS03 c=new BMS03();
 		BMS09 d=new BMS09();
-		int RM=random.nextInt(4);{
+		int RM=2;{
 			if(RM==0) {
 				a.setVisible(true);
 			}else if(RM==1) {
