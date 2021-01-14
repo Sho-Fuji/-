@@ -96,7 +96,7 @@ public class gra1 extends JDialog {
 		
 		kaisetuLabel = new JLabel(" ");
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
-		kaisetuLabel.setBounds(34, 180, 334, 80);
+		kaisetuLabel.setBounds(12, 180, 356, 80);
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
