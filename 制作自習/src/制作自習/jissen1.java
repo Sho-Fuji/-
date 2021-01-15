@@ -64,7 +64,7 @@ public class jissen1 extends JDialog {
 		MessageLabel.setBounds(15, 161, 405, 50);
 		contentPanel.add(MessageLabel);
 		
-		lblNewLabel = new JLabel("<html>「次の文章【	】に不適切なものはどれか？<br> 普通の言葉：誰ですか→望ましい言葉：失礼でございますが【	）でいらっしゃいますか <html> ");
+		lblNewLabel = new JLabel("<html>「次の文章【\t】に不適切なものはどれか？<br> 普通の言葉：誰ですか→望ましい言葉：失礼でございますが【　】 ）でいらっしゃいますか <html> ");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 12));
