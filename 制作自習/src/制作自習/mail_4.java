@@ -95,12 +95,12 @@ public class mail_4 extends JDialog {
 		kaisetuLabel = new JLabel(" ");
 		kaisetuLabel.setFont(new Font("MS UI Gothic", Font.PLAIN, 12));
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
-		kaisetuLabel.setBounds(21, 211, 386, 50);
+		kaisetuLabel.setBounds(0, 211, 407, 50);
 		contentPanel.add(kaisetuLabel);
 		
 		MessageLabel = new JLabel("");
 		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 40));
-		MessageLabel.setBounds(21, 161, 334, 61);
+		MessageLabel.setBounds(0, 161, 396, 61);
 		contentPanel.add(MessageLabel);
 		{
 			JPanel buttonPane = new JPanel();
@@ -121,12 +121,12 @@ public class mail_4 extends JDialog {
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。 全ての情報を必ず入れる必要はありません。</html>");
 							MessageLabel.setText("〇 正解");
+							MessageLabel.setForeground(Color.RED);
 							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。相手が読みやすいように区切りを入れる方が良いです。</html>");
 							MessageLabel.setText("× 不正解");
-							MessageLabel.setForeground(Color.RED);
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);

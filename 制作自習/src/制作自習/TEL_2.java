@@ -59,6 +59,22 @@ public class TEL_2 extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
+		JButton BackButton = new JButton("戻る");
+		BackButton.setBounds(367, 29, 59, 21);
+		contentPanel.add(BackButton);
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
+		BackButton.setActionCommand("Cancel");
+		
+		MessageLabel = new JLabel(" ");
+		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 40));
+		MessageLabel.setBounds(21, 166, 334, 56);
+		contentPanel.add(MessageLabel);
+		
 		lblNewLabel = new JLabel("<html>電話の受け方で用件を伺う際、最も適切な<br>ものを選べ <html>");
 		lblNewLabel.setForeground(Color.RED);
 		lblNewLabel.setFont(new Font("BIZ UDPゴシック", Font.BOLD, 20));
@@ -95,13 +111,8 @@ public class TEL_2 extends JDialog {
 		
 		kaisetuLabel = new JLabel(" ");
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
-		kaisetuLabel.setBounds(21, 211, 386, 50);
+		kaisetuLabel.setBounds(10, 198, 416, 63);
 		contentPanel.add(kaisetuLabel);
-		
-		MessageLabel = new JLabel(" ");
-		MessageLabel.setFont(new Font("游ゴシック", Font.BOLD, 40));
-		MessageLabel.setBounds(21, 172, 334, 50);
-		contentPanel.add(MessageLabel);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -136,16 +147,6 @@ public class TEL_2 extends JDialog {
 						NextButton.setEnabled(true);
 					}
 				});
-				
-				JButton BackButton = new JButton("戻る");
-				BackButton.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						setVisible(false);
-						menu.setVisible(true);
-					}
-				});
-				buttonPane.add(BackButton);
-				BackButton.setActionCommand("Cancel");
 				AnswerButton.setActionCommand("OK");
 				buttonPane.add(AnswerButton);
 				getRootPane().setDefaultButton(AnswerButton);
