@@ -137,6 +137,12 @@ public class TEL extends JDialog {
 				});
 				
 				JButton BackButton = new JButton("戻る");
+				BackButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						setVisible(false);
+						menu.setVisible(true);
+					}
+				});
 				buttonPane.add(BackButton);
 				BackButton.setActionCommand("Cancel");
 				AnswerButton.setActionCommand("OK");
