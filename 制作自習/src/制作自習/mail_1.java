@@ -105,6 +105,12 @@ public class mail_1 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setBounds(373, 13, 60, 21);
 		contentPanel.add(BackButton);
 		BackButton.setActionCommand("Cancel");
