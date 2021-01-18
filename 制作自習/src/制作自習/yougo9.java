@@ -31,6 +31,9 @@ public class yougo9 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private keigomenu menu = new keigomenu();
+	private cotest y10 = new cotest();
+	public int count = 0;
 
 	/**
 	 * Launch the application.
@@ -96,6 +99,12 @@ public class yougo9 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -118,6 +127,7 @@ public class yougo9 extends JDialog {
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>ISO = International Organization for Standardization<br>IEC = International Electrotechnical Commission<br>IEEE = the Institute of Electrical and Electronics Engineers<br>W3C = World Wide Web Consortium</html>");
+							count++;
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -136,7 +146,9 @@ public class yougo9 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y10.count = count;
+						setVisible(false);
+						y10.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

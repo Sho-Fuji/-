@@ -31,6 +31,9 @@ public class yougo20 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private keigomenu menu = new keigomenu();
+	private yougo26 y6 = new yougo26();
+	public int count = 0;
 
 	/**
 	 * Launch the application.
@@ -125,7 +128,7 @@ public class yougo20 extends JDialog {
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>英語では「agenda」と書き、協議事項、議事日程、予定表などと訳される。</html>");
-							
+							count++;
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -144,7 +147,9 @@ public class yougo20 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y6.count = count;
+						y6.setVisible(true);
+						setVisible(false);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

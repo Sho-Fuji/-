@@ -31,6 +31,9 @@ public class yougo29 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private keigomenu menu = new keigomenu();
+	private yougo9 y9 = new yougo9();
+	public int count = 0;
 
 	/**
 	 * Launch the application.
@@ -100,6 +103,12 @@ public class yougo29 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				y9.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -121,7 +130,7 @@ public class yougo29 extends JDialog {
 						}
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>「アポイントメント」の略で誰かしらと会う約束を取り付けるという意味</html>");
-							
+							count++;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。<br>「アポイントメント」の略で誰かしらと会う約束を取り付けるという意味</html>");
@@ -144,7 +153,9 @@ public class yougo29 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y9.count = count;
+						setVisible(false);
+						y9.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

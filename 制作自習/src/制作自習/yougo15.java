@@ -31,6 +31,9 @@ public class yougo15 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private keigomenu menu = new keigomenu();
+	private yougo4 y3 = new yougo4();
+	public int count = 0;
 
 	/**
 	 * Launch the application.
@@ -97,6 +100,12 @@ public class yougo15 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -137,7 +146,9 @@ public class yougo15 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y3.count = count;
+						setVisible(false);
+						y3.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

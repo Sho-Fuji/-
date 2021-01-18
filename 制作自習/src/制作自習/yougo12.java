@@ -31,7 +31,9 @@ public class yougo12 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
-
+	private keigomenu menu = new keigomenu();
+	private yougo20 y5 = new yougo20();
+	public int count = 0;
 	/**
 	 * Launch the application.
 	 */
@@ -97,6 +99,12 @@ public class yougo12 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -113,6 +121,7 @@ public class yougo12 extends JDialog {
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>花形＝投資が必要だが収益が安定している製品、投資を継続するべき。<br>金の生る木＝少ない投資で収益を生み出す製品、過度な投資は抑制するべき。<br>問題児＝投資で将来成長が見込める製品、投資で花形に育成するべき。<br>負け犬＝将来性が低く収益も少ない、撤退を検討するべき。</html>");
+							count++;
 						}
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「金の生る木」<br>花形＝投資が必要だが収益が安定している製品、投資を継続するべき。<br>金の生る木＝少ない投資で収益を生み出す製品、過度な投資は抑制するべき。<br>問題児＝投資で将来成長が見込める製品、投資で花形に育成するべき。<br>負け犬＝将来性が低く収益も少ない、撤退を検討するべき。</html>");
@@ -137,7 +146,9 @@ public class yougo12 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y5.count = count;
+						setVisible(false);
+						y5.setVisible(true);					
 					}
 				});
 				NextButton.setActionCommand("Cancel");

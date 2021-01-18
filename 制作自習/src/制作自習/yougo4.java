@@ -30,6 +30,9 @@ public class yougo4 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private yougo12 y4 = new yougo12();
+	private keigomenu menu = new keigomenu();
+	public int count = 0;
 
 	/**
 	 * Launch the application.
@@ -95,6 +98,12 @@ public class yougo4 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -117,6 +126,7 @@ public class yougo4 extends JDialog {
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です<br>CEO = Chief Executive Officer = 最高経営責任者<br>CIO = Chief Information Officer = 最高情報責任者<br>COO = Chief Operations Officer = 最高執行責任者<br>CTO = Chief Technology Officer = 最高技術責任者</html>");
+							count++;
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -135,7 +145,9 @@ public class yougo4 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y4.count = count;
+						setVisible(false);
+						y4.setVisible(true);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

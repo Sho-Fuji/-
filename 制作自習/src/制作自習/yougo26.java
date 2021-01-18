@@ -31,6 +31,9 @@ public class yougo26 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private keigomenu menu = new keigomenu();
+	private yougo6 y6 = new yougo6();
+	public int count = 0;
 
 	/**
 	 * Launch the application.
@@ -100,6 +103,12 @@ public class yougo26 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -113,7 +122,7 @@ public class yougo26 extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						if(ARadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>ビジネスシーンでは契約・交渉・公約・委託・関わりという意味で使われる</html>");
-							
+							count++;
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。<br>ビジネスシーンでは契約・交渉・公約・委託・関わりという意味で使われる</html>");
@@ -144,7 +153,9 @@ public class yougo26 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y6.count = count;
+						setVisible(false);
+						y6.setVisible(true);						
 					}
 				});
 				NextButton.setActionCommand("Cancel");
