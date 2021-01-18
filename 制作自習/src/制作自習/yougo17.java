@@ -31,6 +31,9 @@ public class yougo17 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private keigomenu menu=new keigomenu();
+	private yougo5 y3 = new yougo5();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -97,6 +100,12 @@ public class yougo17 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -116,6 +125,7 @@ public class yougo17 extends JDialog {
 						}
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>SaaS = Software as a Service<br>IaaS = Infrastructure as a Service<br>PaaS = Platform as a Service<br>DaaS = Desktop as a Service</html>");
+							count+=1;
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「PaaS」<br>SaaS = Software as a Service<br>IaaS = Infrastructure as a Service<br>PaaS = Platform as a Service<br>DaaS = Desktop as a Service</html>");

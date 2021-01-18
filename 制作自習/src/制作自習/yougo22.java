@@ -31,6 +31,9 @@ public class yougo22 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private keigomenu menu=new keigomenu();
+	private yougo14 y1 = new yougo14();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -100,6 +103,12 @@ public class yougo22 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -113,7 +122,7 @@ public class yougo22 extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						if(ARadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>主に論理的という意味で使用され、ビジネスではロジカルシンキングという言葉で使われる。</html>");
-							
+							count+=1;
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。<br>主に論理的という意味で使用され、ビジネスではロジカルシンキングという言葉で使われる。</html>");
@@ -144,7 +153,9 @@ public class yougo22 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y1.count=count;
+						y1.setVisible(true);
+						setVisible(false);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

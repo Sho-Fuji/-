@@ -31,6 +31,9 @@ public class yougo19 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	public keigomenu menu=new keigomenu();
+	public cotest C=new cotest();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -100,6 +103,12 @@ public class yougo19 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -117,7 +126,7 @@ public class yougo19 extends JDialog {
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>ブリーフ（brief）は「短い、簡潔」「要約、概要」という意味で、ブリーフィングは簡単な説明、報告、レクチャーという意味で使われる。</html>");
-							
+							count+=1;
 						}
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。<br>ブリーフ（brief）は「短い、簡潔」「要約、概要」という意味で、ブリーフィングは簡単な説明、報告、レクチャーという意味で使われる。</html>");
@@ -144,7 +153,9 @@ public class yougo19 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						C.count=count;
+						C.setVisible(true);
+						setVisible(false);
 					}
 				});
 				NextButton.setActionCommand("Cancel");
