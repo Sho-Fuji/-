@@ -31,6 +31,9 @@ public class yougo25 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private keigomenu menu=new keigomenu();
+	private yougo7 y7 = new yougo7();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -100,6 +103,12 @@ public class yougo25 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -113,6 +122,7 @@ public class yougo25 extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						if(ARadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>保留以外にも延期、先延ばし、再検討という意味でも使われる。</html>");
+							count+=1;
 							
 						}
 						else if(BRadioButton.isSelected()) {
@@ -144,7 +154,9 @@ public class yougo25 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y7.count=count;
+						y7.setVisible(true);
+						setVisible(false);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

@@ -31,6 +31,9 @@ public class yougo5 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private keigomenu menu=new keigomenu();
+	private yougo21 y5 = new yougo21();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -96,6 +99,12 @@ public class yougo5 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -109,6 +118,7 @@ public class yougo5 extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						if(ARadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>CEO = Chief Executive Officer = 最高経営責任者<br>CIO = Chief Information Officer = 最高情報責任者<br>COO = Chief Operations Officer = 最高執行責任者<br>CTO = Chief Technology Officer = 最高技術責任者</html>");
+							count+=1;
 						}
 						else if(BRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>不正解です。正解は「CTO」<br>CEO = Chief Executive Officer = 最高経営責任者<br>CIO = Chief Information Officer = 最高情報責任者<br>COO = Chief Operations Officer = 最高執行責任者<br>CTO = Chief Technology Officer = 最高技術責任者</html>");
@@ -136,7 +146,9 @@ public class yougo5 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y5.count=count;
+						y5.setVisible(true);
+						setVisible(false);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

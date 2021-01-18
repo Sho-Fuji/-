@@ -31,6 +31,9 @@ public class yougo27 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private keigomenu menu=new keigomenu();
+	private yougo13 y9 = new yougo13();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -100,6 +103,12 @@ public class yougo27 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -121,6 +130,7 @@ public class yougo27 extends JDialog {
 						}
 						else if(CRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>英語で「assin」と書き、割り当てる・与える、と訳される</html>");
+							count+=1;
 							
 						}
 						else if(DRadioButton.isSelected()) {
@@ -144,7 +154,9 @@ public class yougo27 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y9.count=count;
+						y9.setVisible(true);
+						setVisible(false);
 					}
 				});
 				NextButton.setActionCommand("Cancel");
