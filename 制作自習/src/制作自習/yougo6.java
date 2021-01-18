@@ -102,7 +102,7 @@ public class yougo6 extends JDialog {
 		BackButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				
+				menu.setVisible(true);
 			}
 		});
 		BackButton.setActionCommand("Cancel");
