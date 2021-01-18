@@ -95,7 +95,7 @@ public class TEL_3 extends JDialog {
 		
 		kaisetuLabel = new JLabel(" ");
 		kaisetuLabel.setVerticalAlignment(SwingConstants.TOP);
-		kaisetuLabel.setBounds(21, 211, 386, 50);
+		kaisetuLabel.setBounds(10, 211, 426, 50);
 		contentPanel.add(kaisetuLabel);
 		
 		MessageLabel = new JLabel("");
