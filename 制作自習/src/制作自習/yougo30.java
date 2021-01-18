@@ -31,6 +31,9 @@ public class yougo30 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private keigomenu menu=new keigomenu();
+	private yougo23 y7 = new yougo23();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -100,6 +103,12 @@ public class yougo30 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -125,7 +134,7 @@ public class yougo30 extends JDialog {
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>相手がどういった人かの人物像を設定することとして使われる</html>");
-							
+							count+=1;
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -144,7 +153,9 @@ public class yougo30 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y7.count=count;
+						y7.setVisible(true);
+						setVisible(false);
 					}
 				});
 				NextButton.setActionCommand("Cancel");

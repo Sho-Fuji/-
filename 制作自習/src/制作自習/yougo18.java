@@ -31,6 +31,9 @@ public class yougo18 extends JDialog {
 	private JRadioButton CRadioButton;
 	private JRadioButton DRadioButton;
 	private ButtonGroup bg;
+	private keigomenu menu=new keigomenu();
+	private yougo28 y3 = new yougo28();
+	public int count=0;
 
 	/**
 	 * Launch the application.
@@ -97,6 +100,12 @@ public class yougo18 extends JDialog {
 		contentPanel.add(kaisetuLabel);
 		
 		JButton BackButton = new JButton("戻る");
+		BackButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				menu.setVisible(true);
+			}
+		});
 		BackButton.setActionCommand("Cancel");
 		BackButton.setBounds(363, 10, 63, 21);
 		contentPanel.add(BackButton);
@@ -119,6 +128,7 @@ public class yougo18 extends JDialog {
 						}
 						else if(DRadioButton.isSelected()) {
 							kaisetuLabel.setText("<html>正解です。<br>SaaS = Software as a Service<br>IaaS = Infrastructure as a Service<br>PaaS = Platform as a Service<br>DaaS = Desktop as a Service</html>");
+							count+=1;
 						}			
 						ARadioButton.setEnabled(false);
 						BRadioButton.setEnabled(false);
@@ -137,7 +147,9 @@ public class yougo18 extends JDialog {
 				NextButton.setEnabled(false);
 				NextButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						
+						y3.count=count;
+						y3.setVisible(true);
+						setVisible(false);
 					}
 				});
 				NextButton.setActionCommand("Cancel");
