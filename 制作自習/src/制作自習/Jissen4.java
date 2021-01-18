@@ -30,6 +30,7 @@ public class Jissen4 extends JDialog {
 	private JRadioButton CRadioButton;
 	private ButtonGroup bg;
 	private JLabel MessageLabel;
+	private keigomenu menu=new keigomenu();
 	private BMS17 w7 = new BMS17();
 	public int count=0;
 	/**
@@ -134,6 +135,12 @@ public class Jissen4 extends JDialog {
 				});
 				
 				JButton BackButton = new JButton("戻る");
+				BackButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						setVisible(false);
+						menu.setVisible(true);
+					}
+				});
 				buttonPane.add(BackButton);
 				BackButton.setActionCommand("Cancel");
 				AnswerButton.setActionCommand("OK");
